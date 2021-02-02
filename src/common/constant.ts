@@ -1,1 +1,3 @@
 export const HEADER_HEIGHT = 80;
+export const MAIN_NAVIGATION_WIDTH = 200;
+export const QUICK_NAVIGATION_WIDTH = 300;
