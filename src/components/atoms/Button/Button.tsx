@@ -11,7 +11,7 @@ interface Theme {
 interface Props {
   theme?: colors;
   id?: string;
-  classname?: string;
+  className?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
