@@ -1,6 +1,7 @@
-import { StyledNavigation, StyledCalendar, StyledTodo, StyledQuickButtonWrapper } from './QuickNavigation.styled';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import { SquareButton } from 'components/atoms/Button/Button';
+import Calendar from 'components/molecules/Calendar/Calendar';
+import NavTodoList from 'components/molecules/NavTodoList/NavTodoList';
+import { StyledNavigation, StyledNavSection, StyledQuickButtonWrapper } from './QuickNavigation.styled';
 
 const QuickNavigation: React.FC = () => {
   const tempTodayTodo = ['김윤환 컨설턴트와 컨설팅 예약'];
@@ -12,37 +13,29 @@ const QuickNavigation: React.FC = () => {
   ];
   return (
     <StyledNavigation>
-      <StyledCalendar>
+      <StyledNavSection>
         <h1>입시 캘린더</h1>
-        <Calendar calendarType="US" />
-      </StyledCalendar>
-      <StyledTodo>
+        <Calendar />
+      </StyledNavSection>
+      <StyledNavSection>
         <h1>오늘 할 일</h1>
-        <ul>
-          {tempTodayTodo.map(todo => (
-            <li key={todo}>{todo}</li>
-          ))}
-        </ul>
-      </StyledTodo>
-      <StyledTodo>
+        <NavTodoList todoList={tempTodayTodo} />
+      </StyledNavSection>
+      <StyledNavSection>
         <h1>이번 달 할 일</h1>
-        <ul>
-          {tempMonthTodo.map(todo => (
-            <li key={todo}>{todo}</li>
-          ))}
-        </ul>
-      </StyledTodo>
-      <StyledQuickButtonWrapper>
+        <NavTodoList todoList={tempMonthTodo} />
+      </StyledNavSection>
+      <StyledNavSection>
         <h1>바로가기</h1>
-        <div className="button-wrapper">
-          <button>일정 관리</button>
-          <button>결제 관리</button>
-          <button>공지사항</button>
-          <button>입시 뉴스</button>
-          <button>FAQ</button>
-          <button>FAQ</button>
-        </div>
-      </StyledQuickButtonWrapper>
+        <StyledQuickButtonWrapper>
+          <SquareButton size="45%">일정 관리</SquareButton>
+          <SquareButton size="45%">결제 관리</SquareButton>
+          <SquareButton size="45%">공지사항</SquareButton>
+          <SquareButton size="45%">입시 뉴스</SquareButton>
+          <SquareButton size="45%">FAQ</SquareButton>
+          <SquareButton size="45%">FAQ</SquareButton>
+        </StyledQuickButtonWrapper>
+      </StyledNavSection>
     </StyledNavigation>
   );
 };
