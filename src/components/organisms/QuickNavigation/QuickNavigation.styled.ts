@@ -21,11 +21,18 @@ export const StyledNavigation = styled.nav`
 
 export const StyledNavSection = styled.section`
   margin: 1.8rem 0;
+  position: relative;
 
   h1 {
     margin-bottom: 0.8rem;
     font-size: 0.9rem;
     font-weight: 600;
+  }
+
+  .detail-btn {
+    position: absolute;
+    top: -5px;
+    right: 0;
   }
 `;
 

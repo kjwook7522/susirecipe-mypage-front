@@ -1,6 +1,6 @@
-import { SquareButton } from 'components/atoms/Button/Button';
 import Calendar from 'components/molecules/Calendar/Calendar';
 import NavTodoList from 'components/molecules/NavTodoList/NavTodoList';
+import { SmallButton, SquareButton } from 'components/atoms/Button/Button';
 import { StyledNavigation, StyledNavSection, StyledQuickButtonWrapper } from './QuickNavigation.styled';
 
 const QuickNavigation: React.FC = () => {
@@ -16,6 +16,7 @@ const QuickNavigation: React.FC = () => {
       <StyledNavSection>
         <h1>입시 캘린더</h1>
         <Calendar />
+        <SmallButton className="detail-btn" theme="blue">자세히 보기</SmallButton>
       </StyledNavSection>
       <StyledNavSection>
         <h1>오늘 할 일</h1>
