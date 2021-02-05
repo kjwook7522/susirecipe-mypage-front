@@ -1,4 +1,4 @@
-import IndexTemplate from 'templates/IndexTemplate';
+import IndexTemplate from 'templates/IndexTemplate/IndexTemplate';
 
 const Index: React.FC = () => {
   return <IndexTemplate />;
