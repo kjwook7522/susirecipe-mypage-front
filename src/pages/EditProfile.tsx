@@ -1,7 +1,5 @@
-import MainLayout from "layouts/MainLayout/MainLayout";
-
 const EditProfile: React.FC = () => {
-  return <MainLayout></MainLayout>
-}
+  return <div></div>;
+};
 
 export default EditProfile;
