@@ -28,7 +28,6 @@ export const StyledNavigationMenu = styled.div`
 export const StyledNavigationSubMenu = styled.div`
   width: 100%;
   max-height: 0px;
-  padding: 0 2rem;
   overflow: hidden;
   background-color: #303030;
   color: #fff;
@@ -36,7 +35,7 @@ export const StyledNavigationSubMenu = styled.div`
 
   &.active {
     max-height: 150px;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     background-color: #444;
   }
 
@@ -44,19 +43,31 @@ export const StyledNavigationSubMenu = styled.div`
   }
 
   ul {
-    li {
-      margin: 0.3rem 0;
-      padding: 0.3rem 0;
+    a {
+      color: #fff;
+      text-decoration: none;
 
-      a {
-        color: #fff;
-        text-decoration: none;
+      li {
+        padding: 0.45rem 2rem;
+
+        &:hover {
+          background-color: #666;
+        }
+      }
+
+      li::before {
+        content: '-';
+        margin-right: 0.4rem;
       }
     }
 
-    li::before {
-      content: '-';
-      margin-right: 0.4rem;
+    a.subactive {
+      color: #303030;
+      text-decoration: none;
+
+      li {
+        background-color: #fff;
+      }
     }
   }
 `;
