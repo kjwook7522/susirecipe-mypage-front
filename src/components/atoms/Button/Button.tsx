@@ -12,6 +12,7 @@ interface Props {
   theme?: colors;
   id?: string;
   className?: string;
+  style?: React.CSSProperties;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 

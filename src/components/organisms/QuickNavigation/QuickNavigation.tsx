@@ -16,7 +16,9 @@ const QuickNavigation: React.FC = () => {
       <StyledNavSection>
         <h1>입시 캘린더</h1>
         <Calendar />
-        <SmallButton className="detail-btn" theme="blue">자세히 보기</SmallButton>
+        <SmallButton className="detail-btn" theme="blue">
+          자세히 보기
+        </SmallButton>
       </StyledNavSection>
       <StyledNavSection>
         <h1>오늘 할 일</h1>
@@ -29,12 +31,24 @@ const QuickNavigation: React.FC = () => {
       <StyledNavSection>
         <h1>바로가기</h1>
         <StyledQuickButtonWrapper>
-          <SquareButton size="45%">일정 관리</SquareButton>
-          <SquareButton size="45%">결제 관리</SquareButton>
-          <SquareButton size="45%">공지사항</SquareButton>
-          <SquareButton size="45%">입시 뉴스</SquareButton>
-          <SquareButton size="45%">FAQ</SquareButton>
-          <SquareButton size="45%">FAQ</SquareButton>
+          <SquareButton size="45%" style={{ margin: '0.3rem' }}>
+            일정 관리
+          </SquareButton>
+          <SquareButton size="45%" style={{ margin: '0.3rem' }}>
+            결제 관리
+          </SquareButton>
+          <SquareButton size="45%" style={{ margin: '0.3rem' }}>
+            공지사항
+          </SquareButton>
+          <SquareButton size="45%" style={{ margin: '0.3rem' }}>
+            입시 뉴스
+          </SquareButton>
+          <SquareButton size="45%" style={{ margin: '0.3rem' }}>
+            FAQ
+          </SquareButton>
+          <SquareButton size="45%" style={{ margin: '0.3rem' }}>
+            FAQ
+          </SquareButton>
         </StyledQuickButtonWrapper>
       </StyledNavSection>
     </StyledNavigation>
