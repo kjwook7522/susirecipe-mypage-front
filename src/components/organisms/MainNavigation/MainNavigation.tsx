@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { StyledNavigation, StyledNavigationMenu, StyledNavigationSubMenu } from './MainNavigation.styled';
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { StyledNavigation } from './MainNavigation.styled';
+import NavDropdownMenu from 'components/molecules/NavDropdownMenu/NavDropdownMenu';
 
 const Navigation: React.FC = () => {
   // ** ActiveTab ** //
@@ -33,65 +32,39 @@ const Navigation: React.FC = () => {
         }
         return;
       default:
+        setActivceTab(0);
         return;
     }
   };
 
+  const submenus: Array<NavSubMenu> = [
+    {
+      name: '개인 정보 수정',
+      link: '/editprofile',
+    },
+    {
+      name: '일정 관리',
+      link: '/scedule',
+    },
+    {
+      name: '결제 관리',
+      link: '/paymanage',
+    },
+  ];
+
   return (
     <StyledNavigation>
-      <StyledNavigationMenu data-tab="tab1" className={activeTab === 1 ? 'active' : undefined} onClick={handleMenu}>
-        <h3>김동빈</h3>
-        {activeTab === 1 ? <FiChevronUp /> : <FiChevronDown />}
-      </StyledNavigationMenu>
-      <StyledNavigationSubMenu className={activeTab === 1 ? 'active' : undefined}>
-        <ul>
-          <NavLink to="/editprofile" activeClassName="subactive">
-            <li>개인 정보 수정</li>
-          </NavLink>
-          <NavLink to="/scedule" activeClassName="subactive">
-            <li>일정 관리</li>
-          </NavLink>
-          <NavLink to="/paymanage" activeClassName="subactive">
-            <li>결제 관리</li>
-          </NavLink>
-        </ul>
-      </StyledNavigationSubMenu>
+      <NavDropdownMenu tabId="tab1" active={activeTab === 1} submenus={submenus} onClick={handleMenu}>
+        김동빈
+      </NavDropdownMenu>
 
-      <StyledNavigationMenu data-tab="tab2" className={activeTab === 2 ? 'active' : undefined} onClick={handleMenu}>
-        <h3>컨설팅 코스</h3>
-        {activeTab === 2 ? <FiChevronUp /> : <FiChevronDown />}
-      </StyledNavigationMenu>
-      <StyledNavigationSubMenu className={activeTab === 2 ? 'active' : undefined}>
-        <ul>
-          <NavLink to="/editprofile" activeClassName="subactive">
-            <li>개인 정보 수정</li>
-          </NavLink>
-          <NavLink to="/scedule" activeClassName="subactive">
-            <li>일정 관리</li>
-          </NavLink>
-          <NavLink to="/paymanage" activeClassName="subactive">
-            <li>결제 관리</li>
-          </NavLink>
-        </ul>
-      </StyledNavigationSubMenu>
+      <NavDropdownMenu tabId="tab2" active={activeTab === 2} submenus={submenus} onClick={handleMenu}>
+        컨설팅 코스
+      </NavDropdownMenu>
 
-      <StyledNavigationMenu data-tab="tab3" className={activeTab === 3 ? 'active' : undefined} onClick={handleMenu}>
-        <h3>이용 안내</h3>
-        {activeTab === 3 ? <FiChevronUp /> : <FiChevronDown />}
-      </StyledNavigationMenu>
-      <StyledNavigationSubMenu className={activeTab === 3 ? 'active' : undefined}>
-        <ul>
-          <NavLink to="/editprofile" activeClassName="subactive">
-            <li>개인 정보 수정</li>
-          </NavLink>
-          <NavLink to="/scedule" activeClassName="subactive">
-            <li>일정 관리</li>
-          </NavLink>
-          <NavLink to="/paymanage" activeClassName="subactive">
-            <li>결제 관리</li>
-          </NavLink>
-        </ul>
-      </StyledNavigationSubMenu>
+      <NavDropdownMenu tabId="tab3" active={activeTab === 3} submenus={submenus} onClick={handleMenu}>
+        이용 안내
+      </NavDropdownMenu>
     </StyledNavigation>
   );
 };
