@@ -66,7 +66,26 @@ export const StyledIconBox = styled.div`
     border-radius: 10px;
     background-color: #fff;
     font-size: 1.3rem;
-    color: #333;
     cursor: pointer;
+  }
+
+  .alarm {
+    color: #444;
+    transition: all 0.4s ease-out;
+
+    &:hover {
+      background-color: #444;
+      color: #fff;
+    }
+  }
+
+  .power {
+    color: #ff2e63;
+    transition: all 0.4s ease-out;
+
+    &:hover {
+      background-color: #ff2e63;
+      color: #fff;
+    }
   }
 `;

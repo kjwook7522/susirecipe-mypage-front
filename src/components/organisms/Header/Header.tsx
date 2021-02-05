@@ -20,11 +20,11 @@ const Header: React.FC = () => {
         </StyledUserBox>
 
         <StyledIconBox>
-          <span className="icon">
+          <span className="icon alarm">
             <BsBellFill />
           </span>
-          <span className="icon">
-            <IoPower color="#ff2e63" />
+          <span className="icon power">
+            <IoPower />
           </span>
         </StyledIconBox>
       </StyledRightHeader>
