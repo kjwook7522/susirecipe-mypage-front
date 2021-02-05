@@ -9,6 +9,7 @@ export const StyledHaeder = styled.header`
   position: fixed;
   top: 0;
   display: flex;
+  z-index: 100;
 `;
 
 export const StyledLeftHeader = styled.div`
