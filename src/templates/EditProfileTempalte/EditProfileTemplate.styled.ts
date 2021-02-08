@@ -31,15 +31,3 @@ export const StyledInfoForm = styled.form`
     font-size: 0.9rem;
   }
 `;
-
-export const StyledInputBox = styled.div`
-  margin-bottom: 1rem;
-  display: flex;
-
-  label {
-    width: 100px;
-    display: flex;
-    align-items: center;
-    font-size: 0.9rem;
-  }
-`;

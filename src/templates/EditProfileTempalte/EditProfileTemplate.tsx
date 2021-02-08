@@ -1,6 +1,7 @@
 import { FlexButton } from 'components/atoms/Button/Button';
 import Input from 'components/atoms/Input/Input';
 import Select from 'components/atoms/Select/Select';
+import InputBox from 'components/molecules/InputBox/InputBox';
 import {
   ACADEMICSTATUSLIST,
   BANKLIST,
@@ -15,7 +16,6 @@ import {
   StyledEditprofileTemplate,
   StyledPageTitle,
   StyledInfoForm,
-  StyledInputBox,
 } from './EditProfileTemplate.styled';
 
 const EditProfileTempalte: React.FC = () => {
@@ -25,107 +25,90 @@ const EditProfileTempalte: React.FC = () => {
       <StyledInfoForm>
         <h3>- 필수정보 입력</h3>
 
-        <StyledInputBox>
-          <label htmlFor="name">이름</label>
+        <InputBox label="이름" labelFor="name">
           <Input id="name" width="150px" required placeholder="홍길동" />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="gender">성별</label>
+        <InputBox label="성별" labelFor="gender">
           <Select id="gender" list={GENDERLIST} />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label>생년월일</label>
+        <InputBox label="생년월일">
           <Select list={YEARLIST} />
           <Select list={MONTHLIST} />
           <Select list={DAYLIST} />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="address">주소 검색</label>
+        <InputBox label="주소 검색" labelFor="address">
           <Input id="address" width="300px" required />
           <FlexButton theme="gray" width="80px" height="auto">
             검색
           </FlexButton>
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="address-detail">상세주소</label>
+        <InputBox label="상세주소" labelFor="address-detail">
           <Input id="address-detail" width="300px" placeholder="101동 1001호" />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="phone">휴대폰 번호</label>
+        <InputBox label="휴대폰 번호" labelFor="phone">
           <Input id="phone" width="200px" type="tel" required placeholder="'-' 없이 입력해주세요" />
           <FlexButton theme="gray" width="80px" height="auto">
             인증
           </FlexButton>
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="password">비밀번호 변경</label>
+        <InputBox label="비밀번호 변경" labelFor="password">
           <Input id="password" type="password" width="200px" placeholder="8자리 이상 입력해주세요" />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="password-check">비밀번호 확인</label>
+        <InputBox label="비밀번호 확인" labelFor="password-check">
           <Input id="password-check" width="200px" type="password" />
           <FlexButton theme="gray" width="80px" height="auto">
             확인
           </FlexButton>
-        </StyledInputBox>
+        </InputBox>
       </StyledInfoForm>
 
       <StyledInfoForm>
         <h3>- 추가 정보 입력(대학생 멘토, 컨설턴트만 입력해주세요)</h3>
         <h4>학교 정보</h4>
 
-        <StyledInputBox>
-          <label htmlFor="school-type">출신 고교(유형)</label>
+        <InputBox label="출신 고교(유형)" labelFor="school-type">
           <Select id="school-type" list={SCHOOLTYPELIST} />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="university">대학교</label>
+        <InputBox label="대학교" labelFor="university">
           <Input id="university" width="130px" required placeholder="숭실대학교" />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="academic-status">학적구분</label>
+        <InputBox label="학적구분" labelFor="academic-status">
           <Select id="academic-status" list={ACADEMICSTATUSLIST} />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="enterance-year">입학년도</label>
+        <InputBox label="입학년도" labelFor="enterance-year">
           <Select id="enterance-year" list={YEARLIST} />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="grade">학년</label>
+        <InputBox label="학년" labelFor="grade">
           <Select id="grade" list={GRADELIST} />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="major">전공</label>
+        <InputBox label="전공" labelFor="major">
           <Input id="major" width="130px" required placeholder="영문학과" />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="double-major">복수전공</label>
+        <InputBox label="복수전공" labelFor="double-major">
           <Input id="double-major" width="130px" placeholder="경영학과" />
-        </StyledInputBox>
+        </InputBox>
 
         <h4>계좌 정보</h4>
-        <StyledInputBox>
-          <label htmlFor="bank">은행명</label>
+        <InputBox label="은행명" labelFor="bank">
           <Select id="bank" list={BANKLIST} />
-        </StyledInputBox>
+        </InputBox>
 
-        <StyledInputBox>
-          <label htmlFor="account">계좌 번호</label>
+        <InputBox label="계좌 번호" labelFor="account">
           <Input id="account" width="300px" required placeholder="'-' 없이 입력해주세요" />
-        </StyledInputBox>
+        </InputBox>
       </StyledInfoForm>
     </StyledEditprofileTemplate>
   );
