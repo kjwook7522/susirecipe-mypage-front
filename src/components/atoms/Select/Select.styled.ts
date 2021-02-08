@@ -14,5 +14,6 @@ export const StyledSelect = styled.select`
 
   &:focus {
     outline: none;
+    box-shadow: 0 0 5px #3d3d3d;
   }
 `;
