@@ -1,5 +1,7 @@
+import EditProfileTempalte from "templates/EditProfileTempalte/EditProfileTemplate";
+
 const EditProfile: React.FC = () => {
-  return <div></div>;
+  return <EditProfileTempalte />;
 };
 
 export default EditProfile;
