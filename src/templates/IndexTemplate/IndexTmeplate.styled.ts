@@ -10,7 +10,7 @@ export const StyledDdayAlertSection = styled.section`
   justify-content: space-between;
 
   .alert-box {
-    width: 30%;
+    flex-basis: 30%;
   }
 `;
 

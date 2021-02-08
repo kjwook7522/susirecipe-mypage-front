@@ -12,6 +12,9 @@ import {
 } from './IndexTmeplate.styled';
 
 const IndexTemplate: React.FC = () => {
+  // ** ActiveTab ** //
+  // 1. 중요공지/이벤트  //
+  // 2. 입시 뉴스      //
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTab = (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
