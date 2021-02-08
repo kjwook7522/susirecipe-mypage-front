@@ -7,6 +7,7 @@ interface Theme {
 }
 
 export const DefaultButton = styled.button<{ theme: Theme }>`
+  display: inline-block;
   border: none;
   border-radius: 10px;
   background-color: ${props => props.theme.bgColor};

@@ -1,6 +1,6 @@
 import { StyledSmallButton, StyledMiddleButton, StyledFlexButton, StyledSquareButton } from './Button.styled';
 
-type colors = 'black' | 'blue' | 'kakao';
+type colors = 'black' | 'blue' | 'kakao' | 'gray';
 
 interface Theme {
   bgColor: string;
@@ -13,7 +13,7 @@ interface Props {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 interface FlexProps extends Props {
@@ -33,6 +33,8 @@ const convertTheme = (color: colors | undefined): Theme => {
       return { bgColor: '#006edc', hoverColor: '#2a89e7', textColor: '#fff' };
     case 'kakao':
       return { bgColor: '#f5d60b', hoverColor: '#fde85f', textColor: '#fff' };
+    case 'gray':
+      return { bgColor: '#444', hoverColor: '#606060', textColor: '#fff' };
     default:
       return { bgColor: '#000', hoverColor: '#303030', textColor: '#fff' };
   }
