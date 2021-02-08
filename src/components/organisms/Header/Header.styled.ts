@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { HEADER_HEIGHT } from 'common/constant';
+import { HEADER_HEIGHT } from 'common/constants/FixStyle';
 
 export const StyledHaeder = styled.header`
   width: 100%;

@@ -1,4 +1,4 @@
-import { HEADER_HEIGHT, MAIN_NAVIGATION_WIDTH } from 'common/constant';
+import { HEADER_HEIGHT, MAIN_NAVIGATION_WIDTH } from 'common/constants/FixStyle';
 import styled from 'styled-components';
 
 export const StyledNavigation = styled.nav`
