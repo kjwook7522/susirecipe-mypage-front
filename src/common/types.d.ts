@@ -14,3 +14,8 @@ interface ConsultingPreview {
   endDate: Date;
   progressDay?: number;
 }
+
+interface MyFile {
+  title: string;
+  link: string;
+}
