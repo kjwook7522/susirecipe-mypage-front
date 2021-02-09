@@ -9,13 +9,27 @@ interface Props {
 const TakingConsulting: React.FC<Props> = ({ consultingList }) => {
   const [activeTab, setActiveTab] = useState<number | null>(null);
 
-  const openTab = (event: React.MouseEvent<SVGElement, MouseEvent>) => {
-    const tab = parseInt(event.currentTarget.id);
-    setActiveTab(tab);
-  };
+  // const openTab = (event: React.MouseEvent<SVGElement, MouseEvent>) => {
+  //   const tab = parseInt(event.currentTarget.id);
+  //   setActiveTab(tab);
+  // };
 
-  const closeTab = () => {
-    setActiveTab(null);
+  // const closeTab = () => {
+  //   setActiveTab(null);
+  // };
+
+  const handleTab = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const { tab } = event.currentTarget.dataset;
+    if (!tab) {
+      return;
+    }
+
+    const tabIndex = parseInt(tab);
+    if (tabIndex !== activeTab) {
+      setActiveTab(tabIndex);
+    } else {
+      setActiveTab(null);
+    }
   };
 
   return (
@@ -26,19 +40,23 @@ const TakingConsulting: React.FC<Props> = ({ consultingList }) => {
       </StyledTableRow>
 
       {consultingList.map((consulting, idx) => (
-        <StyledTableRow active={activeTab === idx}>
-          <div className="content-cell">
+        <StyledTableRow key={idx} active={activeTab === idx}>
+          <div className="content-cell" data-tab={idx} onClick={handleTab}>
             <h1 className="title">
               {consulting.title}
               {activeTab === idx ? (
-                <FiChevronUp id={idx.toString()} className="more-icon" onClick={closeTab} />
+                <FiChevronUp className="more-icon"/>
               ) : (
-                <FiChevronDown id={idx.toString()} className="more-icon" onClick={openTab} />
+                <FiChevronDown className="more-icon"/>
               )}
             </h1>
             <div className="content">
-              <p>회차 진행률 {consulting.currentTimes} / {consulting.totalTimes}</p>
-              <p>시간 진행률 {consulting.currentHours} / {consulting.totalHours}</p>
+              <p>
+                회차 진행률 {consulting.currentTimes} / {consulting.totalTimes}
+              </p>
+              <p>
+                시간 진행률 {consulting.currentHours} / {consulting.totalHours}
+              </p>
               <p>시작일 : {consulting.startDate.toString()}</p>
               <p>종료일 : {consulting.endDate.toString()}</p>
               <p>경과일 {consulting.progressDay}일</p>

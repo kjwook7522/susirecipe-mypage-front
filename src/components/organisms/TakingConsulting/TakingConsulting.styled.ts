@@ -40,6 +40,8 @@ export const StyledTableRow = styled.div<{ active?: boolean }>`
     justify-content: center;
     animation: test 1s backwards;
     transition: all 0.5s ease;
+    cursor: pointer;
+
     ${props =>
       props.active &&
       css`
@@ -49,7 +51,6 @@ export const StyledTableRow = styled.div<{ active?: boolean }>`
     .more-icon {
       padding: 0.3rem;
       margin-left: auto;
-      cursor: pointer;
     }
 
     .title {
