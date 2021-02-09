@@ -9,7 +9,7 @@ const MyFiles: React.FC<Props> = ({ fileList }) => {
   return (
     <>
       {fileList.map(file => (
-        <StyledListRow>
+        <StyledListRow key={file.link}>
           <div className="content-cell">{file.title}</div>
           <div className="content-cell">
             <FlexButton width="100%" height="100%" theme="blue">
