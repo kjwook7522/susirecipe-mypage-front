@@ -13,6 +13,7 @@ interface Props {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
+  clickRef?: any;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
@@ -42,33 +43,33 @@ const convertTheme = (color: colors | undefined): Theme => {
   }
 };
 
-export const SmallButton: React.FC<Props> = ({ children, theme, ...props }) => {
+export const SmallButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
   return (
-    <StyledSmallButton theme={convertTheme(theme)} {...props}>
+    <StyledSmallButton theme={convertTheme(theme)} ref={clickRef} {...props}>
       {children}
     </StyledSmallButton>
   );
 };
 
-export const MiddleButton: React.FC<Props> = ({ children, theme, ...props }) => {
+export const MiddleButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
   return (
-    <StyledMiddleButton theme={convertTheme(theme)} {...props}>
+    <StyledMiddleButton theme={convertTheme(theme)} ref={clickRef} {...props}>
       {children}
     </StyledMiddleButton>
   );
 };
 
-export const FlexButton: React.FC<FlexProps> = ({ children, theme, ...props }) => {
+export const FlexButton: React.FC<FlexProps> = ({ children, theme, clickRef, ...props }) => {
   return (
-    <StyledFlexButton theme={convertTheme(theme)} {...props}>
+    <StyledFlexButton theme={convertTheme(theme)} ref={clickRef} {...props}>
       {children}
     </StyledFlexButton>
   );
 };
 
-export const SquareButton: React.FC<SquareProps> = ({ children, theme, ...props }) => {
+export const SquareButton: React.FC<SquareProps> = ({ children, theme, clickRef, ...props }) => {
   return (
-    <StyledSquareButton theme={convertTheme(theme)} {...props}>
+    <StyledSquareButton theme={convertTheme(theme)} ref={clickRef} {...props}>
       {children}
     </StyledSquareButton>
   );
