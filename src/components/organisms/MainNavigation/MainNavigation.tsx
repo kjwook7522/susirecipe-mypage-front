@@ -44,7 +44,7 @@ const Navigation: React.FC = () => {
     },
     {
       name: '일정 관리',
-      link: '/scedule',
+      link: '/schedule',
     },
     {
       name: '결제 관리',
