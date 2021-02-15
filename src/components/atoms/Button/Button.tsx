@@ -1,6 +1,6 @@
 import { StyledSmallButton, StyledMiddleButton, StyledFlexButton, StyledSquareButton } from './Button.styled';
 
-type colors = 'black' | 'blue' | 'kakao' | 'gray';
+type colors = 'black' | 'blue' | 'kakao' | 'gray' | 'insta';
 
 interface Theme {
   bgColor: string;
@@ -32,9 +32,11 @@ const convertTheme = (color: colors | undefined): Theme => {
     case 'blue':
       return { bgColor: '#006edc', hoverColor: '#2a89e7', textColor: '#fff' };
     case 'kakao':
-      return { bgColor: '#f5d60b', hoverColor: '#fde85f', textColor: '#fff' };
+      return { bgColor: '#f5e04c', hoverColor: '#fde85f', textColor: '#403631' };
     case 'gray':
       return { bgColor: '#444', hoverColor: '#606060', textColor: '#fff' };
+    case 'insta':
+      return { bgColor: '#a84e8e', hoverColor: '#cc4a76', textColor: '#fff' };
     default:
       return { bgColor: '#000', hoverColor: '#303030', textColor: '#fff' };
   }
