@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       <StyledRightHeader>
         <StyledUserBox>
           <span className="username">김동빈</span>
-          <img src="" alt="user_img" />
+          <img src={process.env.PUBLIC_URL + '/images/default_profile_img.jpg'} alt="user_img" />
         </StyledUserBox>
 
         <StyledIconBox>
