@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledCalendar = styled.div`
   .react-calendar {
+    width: 100%;
     border: none;
     background-color: transparent;
 
