@@ -1,11 +1,17 @@
 import { useEffect, useRef } from 'react';
 
 export const useClickOutside = (callback: Function) => {
-  const ref = useRef<any>(null);
+  const targetRef = useRef<any>(null);
+  const buttonRef = useRef<any>(null);
 
   useEffect(() => {
     const handleOutside = (event: Event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
+      if (
+        targetRef.current &&
+        buttonRef.current &&
+        !targetRef.current.contains(event.target) &&
+        !buttonRef.current.contains(event.target)
+      ) {
         callback();
       }
     };
@@ -16,5 +22,5 @@ export const useClickOutside = (callback: Function) => {
     };
   }, [callback]);
 
-  return ref;
+  return [targetRef, buttonRef];
 };
