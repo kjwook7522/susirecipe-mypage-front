@@ -20,6 +20,7 @@ interface Props {
   className?: string;
   value?: string;
   placeholder?: string;
+  backgroundColor?: string;
   required?: boolean;
   readOnly?: boolean;
   disabled?: boolean;
