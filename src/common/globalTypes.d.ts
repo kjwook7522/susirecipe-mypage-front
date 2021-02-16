@@ -1,3 +1,6 @@
+type NavMenuTab = null | 'myinfo' | 'consulting' | 'useinfo';
+type NavSubMenuList = Array<NavSubMenu>;
+
 interface NavSubMenu {
   name: string;
   link: string;
@@ -9,6 +12,8 @@ interface MyTodoList {
   today: TodoList;
   month: TodoList;
 }
+
+type ConsultingList = Array<ConsultingPreview>;
 
 interface ConsultingPreview {
   title: string;
@@ -26,3 +31,7 @@ interface MyFile {
   title: string;
   link: string;
 }
+
+type NoticeNewsTab = 'notice' | 'news';
+type NoticeList = Array<string>;
+type NewsList = Array<string>;

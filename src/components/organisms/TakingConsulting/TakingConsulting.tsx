@@ -3,32 +3,17 @@ import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { useState } from 'react';
 
 interface Props {
-  consultingList: Array<ConsultingPreview>;
+  consultingList: ConsultingList;
 }
 
 const TakingConsulting: React.FC<Props> = ({ consultingList }) => {
-  const [activeTab, setActiveTab] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState(-1);
 
-  // const openTab = (event: React.MouseEvent<SVGElement, MouseEvent>) => {
-  //   const tab = parseInt(event.currentTarget.id);
-  //   setActiveTab(tab);
-  // };
-
-  // const closeTab = () => {
-  //   setActiveTab(null);
-  // };
-
-  const handleTab = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const { tab } = event.currentTarget.dataset;
-    if (!tab) {
-      return;
-    }
-
-    const tabIndex = parseInt(tab);
-    if (tabIndex !== activeTab) {
-      setActiveTab(tabIndex);
+  const handleTab = (idx: number) => {
+    if (idx !== activeTab) {
+      setActiveTab(idx);
     } else {
-      setActiveTab(null);
+      setActiveTab(-1);
     }
   };
 
@@ -41,7 +26,7 @@ const TakingConsulting: React.FC<Props> = ({ consultingList }) => {
 
       {consultingList.map((consulting, idx) => (
         <StyledTableRow key={idx} active={activeTab === idx}>
-          <div className="content-cell" data-tab={idx} onClick={handleTab}>
+          <div className="content-cell" onClick={() => handleTab(idx)}>
             <h1 className="title">
               {consulting.title}
               {activeTab === idx ? (

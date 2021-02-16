@@ -3,41 +3,35 @@ import { StyledNavigation } from './MainNavigation.styled';
 import NavDropdownMenu from 'components/molecules/NavDropdownMenu/NavDropdownMenu';
 
 const Navigation: React.FC = () => {
-  // ** ActiveTab ** //
-  // 0. Null         //
-  // 1. 내정보         //
-  // 2. 컨설팅         //
-  // 3. 이용 안내      //
-  const [activeTab, setActivceTab] = useState(0);
+  const [activeTab, setActivceTab] = useState<NavMenuTab>(null);
 
-  const handleMenu = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const { tab } = event.currentTarget.dataset;
+  const handleMenu = (tab: NavMenuTab) => {
     switch (tab) {
-      case 'tab1':
-        setActivceTab(1);
-        if (activeTab === 1) {
-          setActivceTab(0);
+      case 'myinfo':
+        setActivceTab('myinfo');
+        if (activeTab === 'myinfo') {
+          setActivceTab(null);
         }
         return;
-      case 'tab2':
-        setActivceTab(2);
-        if (activeTab === 2) {
-          setActivceTab(0);
+      case 'consulting':
+        setActivceTab('consulting');
+        if (activeTab === 'consulting') {
+          setActivceTab(null);
         }
         return;
-      case 'tab3':
-        setActivceTab(3);
-        if (activeTab === 3) {
-          setActivceTab(0);
+      case 'useinfo':
+        setActivceTab('useinfo');
+        if (activeTab === 'useinfo') {
+          setActivceTab(null);
         }
         return;
       default:
-        setActivceTab(0);
+        setActivceTab(null);
         return;
     }
   };
 
-  const submenus: Array<NavSubMenu> = [
+  const submenus: NavSubMenuList = [
     {
       name: '개인 정보 수정',
       link: '/editprofile',
@@ -54,15 +48,15 @@ const Navigation: React.FC = () => {
 
   return (
     <StyledNavigation>
-      <NavDropdownMenu tabId="tab1" active={activeTab === 1} submenus={submenus} onClick={handleMenu}>
+      <NavDropdownMenu active={activeTab === 'myinfo'} submenus={submenus} onClick={() => handleMenu('myinfo')}>
         김동빈
       </NavDropdownMenu>
 
-      <NavDropdownMenu tabId="tab2" active={activeTab === 2} submenus={submenus} onClick={handleMenu}>
+      <NavDropdownMenu active={activeTab === 'consulting'} submenus={submenus} onClick={() => handleMenu('consulting')}>
         컨설팅 코스
       </NavDropdownMenu>
 
-      <NavDropdownMenu tabId="tab3" active={activeTab === 3} submenus={submenus} onClick={handleMenu}>
+      <NavDropdownMenu active={activeTab === 'useinfo'} submenus={submenus} onClick={() => handleMenu('useinfo')}>
         이용 안내
       </NavDropdownMenu>
     </StyledNavigation>
