@@ -5,7 +5,7 @@ interface ButtonTheme {
   textColor: string;
 }
 
-type NavMenuTab = null | 'myinfo' | 'consulting' | 'useinfo';
+type NavMenuTab = null | 'dashboard' | 'myinfo' | 'consulting' | 'useinfo' | 'videoclass';
 type NavSubMenuList = Array<NavSubMenu>;
 
 interface NavSubMenu {

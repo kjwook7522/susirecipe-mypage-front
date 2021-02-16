@@ -13,9 +13,9 @@ const NavDropdownMenu: React.FC<Props> = ({ children, active, submenus, onClick 
     <>
       <StyledMainMenu className={active ? 'active' : undefined} onClick={onClick}>
         <h3>{children}</h3>
-        {active ? <FiChevronUp /> : <FiChevronDown />}
+        {submenus ? active ? <FiChevronUp /> : <FiChevronDown /> : undefined}
       </StyledMainMenu>
-      <StyledSubMenu className={active ? 'active' : undefined}>
+      <StyledSubMenu className={active && submenus ? 'active' : undefined}>
         <ul>
           {submenus?.map((submenu, idx) => (
             <NavLink key={idx} to={submenu.link} activeClassName="subactive">

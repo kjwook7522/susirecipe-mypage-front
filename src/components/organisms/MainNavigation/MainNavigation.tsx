@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { StyledNavigation } from './MainNavigation.styled';
+import { useHistory } from 'react-router-dom';
 import NavDropdownMenu from 'components/molecules/NavDropdownMenu/NavDropdownMenu';
+import { StyledNavigation } from './MainNavigation.styled';
 
 const Navigation: React.FC = () => {
+  const history = useHistory();
   const [activeTab, setActivceTab] = useState<NavMenuTab>(null);
 
   const handleMenu = (tab: NavMenuTab) => {
@@ -25,10 +27,21 @@ const Navigation: React.FC = () => {
           setActivceTab(null);
         }
         return;
+      case 'videoclass':
+        setActivceTab('videoclass');
+        if (activeTab === 'videoclass') {
+          setActivceTab(null);
+        }
+        return;
       default:
         setActivceTab(null);
         return;
     }
+  };
+
+  const goDashboard = () => {
+    setActivceTab('dashboard');
+    history.push('/');
   };
 
   const submenus: NavSubMenuList = [
@@ -46,18 +59,41 @@ const Navigation: React.FC = () => {
     },
   ];
 
+  const submenus2: NavSubMenuList = [
+    {
+      name: '공지사항',
+      link: '/notice',
+    },
+    {
+      name: '입시뉴스',
+      link: '/news',
+    },
+    {
+      name: 'FAQ',
+      link: '/faq',
+    },
+  ];
+
   return (
     <StyledNavigation>
+      <NavDropdownMenu active={activeTab === 'dashboard'} onClick={() => goDashboard()}>
+        대쉬보드
+      </NavDropdownMenu>
+
       <NavDropdownMenu active={activeTab === 'myinfo'} submenus={submenus} onClick={() => handleMenu('myinfo')}>
         김동빈
       </NavDropdownMenu>
 
-      <NavDropdownMenu active={activeTab === 'consulting'} submenus={submenus} onClick={() => handleMenu('consulting')}>
+      <NavDropdownMenu active={activeTab === 'consulting'} onClick={() => handleMenu('consulting')}>
         컨설팅 코스
       </NavDropdownMenu>
 
-      <NavDropdownMenu active={activeTab === 'useinfo'} submenus={submenus} onClick={() => handleMenu('useinfo')}>
+      <NavDropdownMenu active={activeTab === 'useinfo'} submenus={submenus2} onClick={() => handleMenu('useinfo')}>
         이용 안내
+      </NavDropdownMenu>
+
+      <NavDropdownMenu active={activeTab === 'videoclass'} onClick={() => handleMenu('videoclass')}>
+        화상수업
       </NavDropdownMenu>
     </StyledNavigation>
   );
