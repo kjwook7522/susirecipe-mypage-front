@@ -21,13 +21,13 @@ const NoticeNews: React.FC<Props> = ({ noticeList, newsList }) => {
         </span>
       </StyledToggleTitle>
       <StyledContents active={activeTab === 'notice'}>
-        {noticeList.map(notice => (
-          <li>{notice}</li>
+        {noticeList.map((notice, idx) => (
+          <li key={idx}>{notice}</li>
         ))}
       </StyledContents>
       <StyledContents active={activeTab === 'news'}>
-        {newsList.map(news => (
-          <li>{news}</li>
+        {newsList.map((news, idx) => (
+          <li key={idx}>{news}</li>
         ))}
       </StyledContents>
     </StyledNoticeNews>
