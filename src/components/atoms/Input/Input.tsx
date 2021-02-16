@@ -26,6 +26,7 @@ interface Props {
   maxLength?: number;
   minLength?: number;
   onClick?: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<Props> = ({ type = 'text', ...props }) => {
