@@ -1,4 +1,4 @@
-import { FlexButton } from 'components/atoms/Button/Button';
+import FlexButton from 'components/atoms/FlexButton/FlexButton';
 import { StyledListRow } from './MyFiles.styled';
 
 interface Props {
@@ -12,7 +12,7 @@ const MyFiles: React.FC<Props> = ({ fileList }) => {
         <StyledListRow key={file.link}>
           <div className="content-cell">{file.title}</div>
           <div className="content-cell">
-            <FlexButton width="100%" height="100%" theme="blue">
+            <FlexButton width="100%" height="100%" theme="kobalt">
               다운로드
             </FlexButton>
           </div>

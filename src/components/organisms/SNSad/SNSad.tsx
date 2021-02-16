@@ -1,4 +1,4 @@
-import { FlexButton } from 'components/atoms/Button/Button';
+import FlexButton from 'components/atoms/FlexButton/FlexButton';
 import { StyledSNSad } from './SNSad.styled';
 import { RiKakaoTalkFill, RiInstagramLine } from 'react-icons/ri';
 

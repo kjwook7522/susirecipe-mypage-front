@@ -1,7 +1,9 @@
 import { BLACK, GRAY, INSTA, KAKAO, KOBALT, LIGHTRED, RED, SKY } from 'common/constants/ButtonTheme';
-import { StyledSmallButton, StyledMiddleButton } from './Button.styled';
+import { StyledFlexButton } from './FlexButton.styled';
 
 interface Props {
+  width: string;
+  height: string;
   theme?: ButtonColors;
   id?: string;
   className?: string;
@@ -33,18 +35,12 @@ const convertTheme = (color: ButtonColors | undefined): ButtonTheme => {
   }
 };
 
-export const SmallButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
+const FlexButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
   return (
-    <StyledSmallButton theme={convertTheme(theme)} ref={clickRef} {...props}>
+    <StyledFlexButton theme={convertTheme(theme)} ref={clickRef} {...props}>
       {children}
-    </StyledSmallButton>
+    </StyledFlexButton>
   );
 };
 
-export const MiddleButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
-  return (
-    <StyledMiddleButton theme={convertTheme(theme)} ref={clickRef} {...props}>
-      {children}
-    </StyledMiddleButton>
-  );
-};
+export default FlexButton;

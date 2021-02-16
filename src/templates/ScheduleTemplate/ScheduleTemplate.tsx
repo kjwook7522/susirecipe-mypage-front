@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from 'common/store';
-import { FlexButton } from 'components/atoms/Button/Button';
+import FlexButton from 'components/atoms/FlexButton/FlexButton';
 import Calendar from 'components/molecules/Calendar/Calendar';
 import MenuPopup from 'components/molecules/MenuPopup/MenuPopup';
 import ScheduleTodoList from 'components/molecules/ScheduleTodoList/ScheduleTodoList';

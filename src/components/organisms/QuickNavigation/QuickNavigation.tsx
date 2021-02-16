@@ -2,7 +2,8 @@ import { useSelector } from 'react-redux';
 import { RootState } from 'common/store';
 import Calendar from 'components/molecules/Calendar/Calendar';
 import NavTodoList from 'components/molecules/NavTodoList/NavTodoList';
-import { SmallButton, SquareButton } from 'components/atoms/Button/Button';
+import { SmallButton } from 'components/atoms/Button/Button';
+import SquareButton from 'components/atoms/SquareButton/SqureButton'
 import { StyledNavigation, StyledNavSection, StyledQuickButtonWrapper } from './QuickNavigation.styled';
 
 const QuickNavigation: React.FC = () => {
@@ -12,7 +13,7 @@ const QuickNavigation: React.FC = () => {
       <StyledNavSection>
         <h1>입시 캘린더</h1>
         <Calendar />
-        <SmallButton className="detail-btn" theme="blue">
+        <SmallButton className="detail-btn" theme="kobalt">
           자세히 보기
         </SmallButton>
       </StyledNavSection>

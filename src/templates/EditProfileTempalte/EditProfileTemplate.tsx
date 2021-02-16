@@ -1,4 +1,4 @@
-import { FlexButton } from 'components/atoms/Button/Button';
+import FlexButton from 'components/atoms/FlexButton/FlexButton';
 import Input from 'components/atoms/Input/Input';
 import Select from 'components/atoms/Select/Select';
 import InputBox from 'components/molecules/InputBox/InputBox';

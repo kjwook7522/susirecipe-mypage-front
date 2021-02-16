@@ -1,7 +1,8 @@
 import { BLACK, GRAY, INSTA, KAKAO, KOBALT, LIGHTRED, RED, SKY } from 'common/constants/ButtonTheme';
-import { StyledSmallButton, StyledMiddleButton } from './Button.styled';
+import { StyledSqureButton } from './SqureButton.styled';
 
 interface Props {
+  size: string;
   theme?: ButtonColors;
   id?: string;
   className?: string;
@@ -33,18 +34,12 @@ const convertTheme = (color: ButtonColors | undefined): ButtonTheme => {
   }
 };
 
-export const SmallButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
+const SqureButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
   return (
-    <StyledSmallButton theme={convertTheme(theme)} ref={clickRef} {...props}>
+    <StyledSqureButton theme={convertTheme(theme)} ref={clickRef} {...props}>
       {children}
-    </StyledSmallButton>
+    </StyledSqureButton>
   );
 };
 
-export const MiddleButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
-  return (
-    <StyledMiddleButton theme={convertTheme(theme)} ref={clickRef} {...props}>
-      {children}
-    </StyledMiddleButton>
-  );
-};
+export default SqureButton;

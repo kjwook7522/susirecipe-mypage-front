@@ -1,3 +1,10 @@
+type ButtonColors = 'black' | 'red' | 'lightred' | 'sky' | 'kobalt' | 'kakao' | 'gray' | 'insta';
+interface ButtonTheme {
+  bgColor: string;
+  hoverColor: string;
+  textColor: string;
+}
+
 type NavMenuTab = null | 'myinfo' | 'consulting' | 'useinfo';
 type NavSubMenuList = Array<NavSubMenu>;
 
