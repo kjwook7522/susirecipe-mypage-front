@@ -12,16 +12,12 @@ const DefaultButtonCSS = css`
 export const StyledSqureButton = styled.button<{ size: string }>`
   width: ${props => props.size};
   position: relative;
-  background-color: ${props => props.theme.bgColor};
-  color: ${props => props.theme.textColor};
+  background-color: #47759b;
+  color: #fff;
   font-size: 0.9rem;
   z-index: 1;
   transition: all 0.5s;
   ${DefaultButtonCSS};
-
-  &:hover {
-    background-color: ${props => props.theme.hoverColor};
-  }
 
   /* for ratio 1:1 box */
   &::after {

@@ -13,7 +13,7 @@ const QuickNavigation: React.FC = () => {
       <StyledNavSection>
         <h1>입시 캘린더</h1>
         <Calendar />
-        <SmallButton className="detail-btn" theme="kobalt">
+        <SmallButton className="detail-btn" theme="sky">
           자세히 보기
         </SmallButton>
       </StyledNavSection>

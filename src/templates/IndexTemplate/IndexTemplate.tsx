@@ -88,7 +88,7 @@ const IndexTemplate: React.FC = () => {
 
       <StyledMenuSection>
         <StyledMenuTitle>수강 컨설팅 확인하기</StyledMenuTitle>
-        <SmallButton className="detail-btn" theme="kobalt">
+        <SmallButton className="detail-btn" theme="sky">
           자세히 보기
         </SmallButton>
         <TakingConsulting consultingList={takeConsultingList} />
@@ -96,14 +96,14 @@ const IndexTemplate: React.FC = () => {
 
       <StyledMenuSection>
         <StyledMenuTitle>첨부 파일</StyledMenuTitle>
-        <SmallButton className="detail-btn" theme="kobalt">
+        <SmallButton className="detail-btn" theme="sky">
           자세히 보기
         </SmallButton>
         <MyFiles fileList={myFilesList} />
       </StyledMenuSection>
 
       <StyledMenuSection>
-        <SmallButton className="detail-btn" theme="kobalt">
+        <SmallButton className="detail-btn" theme="sky">
           자세히 보기
         </SmallButton>
         <NoticeNews noticeList={noticeList} newsList={newsList} />

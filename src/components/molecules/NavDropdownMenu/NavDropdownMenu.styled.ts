@@ -6,12 +6,12 @@ export const StyledMainMenu = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #303030;
+  background-color: #274258;
   color: #fff;
   cursor: pointer;
 
   &.active {
-    background-color: #444;
+    background-color: #314e66;
   }
 `;
 
@@ -19,14 +19,14 @@ export const StyledSubMenu = styled.div`
   width: 100%;
   max-height: 0px;
   overflow: hidden;
-  background-color: #303030;
+  background-color: #274258;
   color: #fff;
   transition: max-height 0.5s, padding 0.5s;
 
   &.active {
     max-height: 150px;
     padding: 1rem 0;
-    background-color: #444;
+    background-color: #314e66;
   }
 
   ul {
@@ -38,7 +38,7 @@ export const StyledSubMenu = styled.div`
         padding: 0.45rem 2rem;
 
         &:hover {
-          background-color: #666;
+          background-color: #47749b;
         }
       }
 
@@ -49,11 +49,11 @@ export const StyledSubMenu = styled.div`
     }
 
     a.subactive {
-      color: #303030;
+      color: #fff;
       text-decoration: none;
 
       li {
-        background-color: #fff;
+        background-color: #47749b;
       }
     }
   }

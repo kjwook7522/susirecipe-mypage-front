@@ -8,7 +8,7 @@ export const StyledDdayAlert = styled.div`
   align-items: center;
   border: none;
   border-radius: 10px;
-  background-color: #000;
+  background-color: #47759b;
   text-align: center;
   color: #fff;
 `;
