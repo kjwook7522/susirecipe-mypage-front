@@ -3,6 +3,13 @@ interface NavSubMenu {
   link: string;
 }
 
+type TodoList = Array<string>;
+
+interface MyTodoList {
+  today: TodoList;
+  month: TodoList;
+}
+
 interface ConsultingPreview {
   title: string;
   consultant: string;
