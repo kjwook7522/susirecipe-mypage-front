@@ -14,6 +14,7 @@ interface NavSubMenu {
 }
 
 type TodoList = Array<string>;
+type Todo = string;
 
 interface MyTodoList {
   today: TodoList;
