@@ -1,7 +1,7 @@
 import { StyledNavTodoList } from './NavTodoList.styled';
 
 interface Props {
-  todoList: Array<string>;
+  todoList: TodoList;
 }
 
 const NavTodoList: React.FC<Props> = ({ todoList }) => {
