@@ -10,6 +10,7 @@ export const StyledSNSad = styled.div`
 
   .sns-btn {
     margin-right: 1.5rem;
+    font-size: 1rem;
 
     svg {
       margin-right: 0.5rem;

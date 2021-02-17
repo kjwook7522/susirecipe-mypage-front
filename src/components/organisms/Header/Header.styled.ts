@@ -5,7 +5,7 @@ export const StyledHaeder = styled.header`
   width: 100%;
   height: ${HEADER_HEIGHT}px;
   padding: 0 2rem;
-  background-color: #000;
+  background-image: linear-gradient(to bottom, #0e1f2b, #1d394b);
   position: fixed;
   top: 0;
   display: flex;
@@ -70,21 +70,21 @@ export const StyledIconBox = styled.div`
   }
 
   .alarm {
-    color: #444;
+    color: #404040;
     transition: all 0.4s ease-out;
 
     &:hover {
-      background-color: #444;
+      background-color: #404040;
       color: #fff;
     }
   }
 
   .power {
-    color: #ff2e63;
+    color: #fa001d;
     transition: all 0.4s ease-out;
 
     &:hover {
-      background-color: #ff2e63;
+      background-color: #fa001d;
       color: #fff;
     }
   }

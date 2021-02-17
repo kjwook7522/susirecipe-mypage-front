@@ -12,7 +12,8 @@ const DefaultButtonCSS = css`
 export const StyledSqureButton = styled.button<{ size: string }>`
   width: ${props => props.size};
   position: relative;
-  background-color: #47759b;
+  background-color: #39759f;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   color: #fff;
   font-size: 0.9rem;
   z-index: 1;
