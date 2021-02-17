@@ -1,3 +1,4 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { StyledMainMenu, StyledSubMenu } from './NavDropdownMenu.styled';
 import { FiChevronUp, FiChevronDown } from 'react-icons/fi';
@@ -6,6 +7,7 @@ interface Props {
   active?: boolean;
   submenus?: NavSubMenuList;
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  children: string;
 }
 
 const NavDropdownMenu: React.FC<Props> = ({ children, active, submenus, onClick }) => {
@@ -27,4 +29,5 @@ const NavDropdownMenu: React.FC<Props> = ({ children, active, submenus, onClick 
     </>
   );
 };
-export default NavDropdownMenu;
+
+export default React.memo(NavDropdownMenu);
