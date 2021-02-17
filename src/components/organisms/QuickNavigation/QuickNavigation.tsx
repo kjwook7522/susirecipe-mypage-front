@@ -1,5 +1,3 @@
-import { useSelector } from 'react-redux';
-import { RootState } from 'common/store';
 import Calendar from 'components/molecules/Calendar/Calendar';
 import NavTodoList from 'components/molecules/NavTodoList/NavTodoList';
 import { SmallButton } from 'components/atoms/Button/Button';
@@ -8,7 +6,6 @@ import { StyledNavigation, StyledNavSection, StyledQuickButtonWrapper } from './
 import { Link } from 'react-router-dom';
 
 const QuickNavigation: React.FC = () => {
-  const myTodoList = useSelector((state: RootState) => state.todoListReducer);
   return (
     <StyledNavigation>
       <StyledNavSection>
@@ -22,11 +19,11 @@ const QuickNavigation: React.FC = () => {
       </StyledNavSection>
       <StyledNavSection>
         <h1>오늘 할 일</h1>
-        <NavTodoList todoList={myTodoList.today} />
+        <NavTodoList type="TODAY" />
       </StyledNavSection>
       <StyledNavSection>
         <h1>이번 달 할 일</h1>
-        <NavTodoList todoList={myTodoList.month} />
+        <NavTodoList type="MONTH" />
       </StyledNavSection>
       <StyledNavSection>
         <h1>바로가기</h1>

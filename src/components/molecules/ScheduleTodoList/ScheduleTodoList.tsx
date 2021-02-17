@@ -1,16 +1,19 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import Input from 'components/atoms/Input/Input';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'common/store';
 import { updateMonthTodo, updateTodayTodo } from 'actions/todoList';
+import Input from 'components/atoms/Input/Input';
 import { StyledScheduleTodoList, StyledButtonWrapper } from './ScheduleTodoList.styled';
 
 interface Props {
-  todoList: TodoList;
   type: 'TODAY' | 'MONTH';
 }
 
-const ScheduleTodoList: React.FC<Props> = ({ todoList, type }) => {
+const ScheduleTodoList: React.FC<Props> = ({ type }) => {
   const dispatch = useDispatch();
+  const myTodoList = useSelector((state: RootState) => state.todoListReducer);
+  const todoList: TodoList = type === 'TODAY' ? myTodoList.today : myTodoList.month;
+  
   const [isEdit, setIsEdit] = useState(false);
   const [editLine, setEditLine] = useState(-1);
   const [editText, setEditText] = useState('');

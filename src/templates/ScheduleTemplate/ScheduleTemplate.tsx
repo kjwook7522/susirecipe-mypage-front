@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from 'common/store';
+import { useDispatch } from 'react-redux';
 import FlexButton from 'components/atoms/FlexButton/FlexButton';
 import Input from 'components/atoms/Input/Input';
 import Calendar from 'components/molecules/Calendar/Calendar';
@@ -55,8 +54,6 @@ const ScheduleTemplate: React.FC = () => {
     setActivePopup(false);
   };
 
-  const myTodoList = useSelector((state: RootState) => state.todoListReducer);
-
   return (
     <StyledScheduleTemplate>
       <StyledPageTitle>일정 관리</StyledPageTitle>
@@ -94,9 +91,9 @@ const ScheduleTemplate: React.FC = () => {
       </StyledCalendarSection>
       <StyledTodoSection>
         <h1>- 이번 달 할일</h1>
-        <ScheduleTodoList todoList={myTodoList.month} type="MONTH" />
+        <ScheduleTodoList type="MONTH" />
         <h1>- 금일 할 일</h1>
-        <ScheduleTodoList todoList={myTodoList.today} type="TODAY" />
+        <ScheduleTodoList type="TODAY" />
       </StyledTodoSection>
     </StyledScheduleTemplate>
   );
