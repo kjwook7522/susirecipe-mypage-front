@@ -14,7 +14,7 @@ const ScheduleTodoList: React.FC<Props> = ({ type }) => {
   const dispatch = useDispatch();
   const myTodoList = useSelector((state: RootState) => state.todoListReducer);
   const todoList: TodoList = type === 'TODAY' ? myTodoList.today : myTodoList.month;
-  
+
   const [isEdit, setIsEdit] = useState(false);
   const [editLine, setEditLine] = useState(-1);
   const [editText, setEditText] = useState('');
@@ -34,6 +34,10 @@ const ScheduleTodoList: React.FC<Props> = ({ type }) => {
   };
 
   const handleDelete = (idx: number) => {
+    if (!window.confirm('정말 삭제하시겠습니까?')) {
+      return;
+    }
+
     todoList.splice(idx, 1);
     if (type === 'TODAY') {
       dispatch(updateTodayTodo([...todoList]));
@@ -51,6 +55,10 @@ const ScheduleTodoList: React.FC<Props> = ({ type }) => {
 
   const handleEditOK = (idx: number) => {
     todoList[idx] = editText;
+    if (!editText) {
+      return;
+    }
+
     if (type === 'TODAY') {
       dispatch(updateTodayTodo([...todoList]));
     }
@@ -67,23 +75,27 @@ const ScheduleTodoList: React.FC<Props> = ({ type }) => {
     setEditLine(-1);
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <StyledScheduleTodoList>
       {todoList.map((todo, idx) => (
         <li key={idx}>
           {editLine === idx ? (
-            <>
-              <Input width="200px" value={editText} onChange={handleEditText} />
+            <form onSubmit={handleSubmit}>
+              <Input width="200px" value={editText} required onChange={handleEditText} />
               <StyledButtonWrapper>
                 <button className="edit-btn" onClick={() => handleEditOK(idx)}>
                   수정완료
                 </button>{' '}
                 |{' '}
-                <button className="delete-btn" onClick={() => handleEditCancel()}>
+                <button className="delete-btn" type="button" onClick={() => handleEditCancel()}>
                   수정취소
                 </button>
               </StyledButtonWrapper>
-            </>
+            </form>
           ) : (
             <>
               {todo}

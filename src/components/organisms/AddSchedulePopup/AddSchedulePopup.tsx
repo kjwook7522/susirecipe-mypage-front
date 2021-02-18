@@ -48,6 +48,7 @@ const AddSchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) 
           <Input
             width="250px"
             value={title}
+            required
             backgroundColor="#f6f6f6"
             placeholder="일정 제목을 입력하세요"
             onChange={handleInput}

@@ -7,7 +7,6 @@ interface Props {
 }
 
 const ConfirmPopup: React.FC<Props> = ({ children, cancleCallback, confirmCallback }) => {
-  console.log('confirm popup');
   return (
     <StyledConfirmPopup>
       <StyledPopupContent>{children}</StyledPopupContent>
