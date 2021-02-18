@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { StyledDdayAlert } from './DdayAlert.styled';
 
-const DdayAlert: React.FC = ({ children }) => {
+interface Props {
+  children?: ReactNode;
+}
+
+const DdayAlert: React.FC<Props> = ({ children }) => {
   return <StyledDdayAlert>{children}</StyledDdayAlert>;
 };
 

@@ -6,6 +6,7 @@ interface Props {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
+  children?: React.ReactNode;
   clickRef?: React.RefObject<any>;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
