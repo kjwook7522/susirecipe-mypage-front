@@ -1,10 +1,13 @@
+// Button //
 type ButtonColors = 'black' | 'red' | 'lightred' | 'sky' | 'kobalt' | 'kakao' | 'gray' | 'insta';
+
 interface ButtonTheme {
   bgColor: string;
   hoverColor: string;
   textColor: string;
 }
 
+// NavMenu //
 type NavMenuTab = null | 'dashboard' | 'myinfo' | 'consulting' | 'useinfo' | 'videoclass';
 type NavSubMenuList = Array<NavSubMenu>;
 
@@ -13,6 +16,7 @@ interface NavSubMenu {
   link: string;
 }
 
+// Todo //
 type TodoList = Array<string>;
 type Todo = string;
 
@@ -21,6 +25,7 @@ interface MyTodoList {
   month: TodoList;
 }
 
+// Consulting //
 type ConsultingList = Array<ConsultingPreview>;
 
 interface ConsultingPreview {
@@ -35,11 +40,24 @@ interface ConsultingPreview {
   progressDay?: number;
 }
 
+// MyFile //
 interface MyFile {
   title: string;
   link: string;
 }
 
+type MyFileList = Array<MyFile>;
+
+// Notice & News //
 type NoticeNewsTab = 'notice' | 'news';
 type NoticeList = Array<string>;
 type NewsList = Array<string>;
+
+interface NoticeNewsList {
+  notice: NoticeList;
+  news: NewsList;
+}
+
+// Dday //
+type Dday = React.ReactNode;
+type DdayList = Array<Dday>;
