@@ -11,6 +11,7 @@ interface Props {
   style?: React.CSSProperties;
   children?: React.ReactNode;
   clickRef?: React.RefObject<any>;
+  disableSubmit?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
@@ -37,9 +38,9 @@ const convertTheme = (color: ButtonColors | undefined): ButtonTheme => {
   }
 };
 
-const FlexButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
+const FlexButton: React.FC<Props> = ({ children, theme, clickRef, disableSubmit, ...props }) => {
   return (
-    <StyledFlexButton theme={convertTheme(theme)} ref={clickRef} {...props}>
+    <StyledFlexButton theme={convertTheme(theme)} ref={clickRef} type={disableSubmit ? 'button' : undefined} {...props}>
       {children}
     </StyledFlexButton>
   );

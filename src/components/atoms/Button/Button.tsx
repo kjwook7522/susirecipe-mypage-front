@@ -8,6 +8,7 @@ interface Props {
   className?: string;
   style?: React.CSSProperties;
   clickRef?: React.RefObject<any>;
+  disableSubmit?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
@@ -34,9 +35,14 @@ const convertTheme = (color: ButtonColors | undefined): ButtonTheme => {
   }
 };
 
-export const SmallButton: React.FC<Props> = React.memo(({ children, theme, clickRef, ...props }) => {
+export const SmallButton: React.FC<Props> = React.memo(({ children, theme, clickRef, disableSubmit, ...props }) => {
   return (
-    <StyledSmallButton theme={convertTheme(theme)} ref={clickRef} {...props}>
+    <StyledSmallButton
+      theme={convertTheme(theme)}
+      ref={clickRef}
+      type={disableSubmit ? 'button' : undefined}
+      {...props}
+    >
       {children}
     </StyledSmallButton>
   );
