@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'common/store';
@@ -103,4 +104,4 @@ const ScheduleTodoList: React.FC<Props> = ({ type }) => {
   );
 };
 
-export default ScheduleTodoList;
+export default React.memo(ScheduleTodoList);
