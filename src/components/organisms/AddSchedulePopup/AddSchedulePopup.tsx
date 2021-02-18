@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addMonthTodo } from 'actions/todoList';
 import ConfirmPopup from 'components/molecules/ConfirmPopup/ConfirmPopup';
+import DatePicker from 'components/atoms/DatePicker/DatePicker';
 import Input from 'components/atoms/Input/Input';
 import { StyledAddSchedulePopup } from './AddSchedulePopup.styled';
 
@@ -38,7 +39,7 @@ const AddSchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) 
       >
         <div className="input-box">
           <h1>일정</h1>
-          <Input width="250px" backgroundColor="#f6f6f6" />
+          <DatePicker />
         </div>
         <div className="input-box">
           <h1>제목</h1>
