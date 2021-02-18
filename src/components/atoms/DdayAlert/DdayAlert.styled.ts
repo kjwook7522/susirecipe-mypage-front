@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const StyledDdayAlert = styled.div`
   width: 100%;
   height: 90px;
-  display: flex;
+  display: inline-flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: none;
@@ -11,4 +12,8 @@ export const StyledDdayAlert = styled.div`
   background-color: #39759f;
   text-align: center;
   color: #fff;
+
+  p {
+    margin-bottom: 0.2rem;
+  }
 `;

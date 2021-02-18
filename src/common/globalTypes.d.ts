@@ -59,5 +59,9 @@ interface NoticeNewsList {
 }
 
 // Dday //
-type Dday = React.ReactNode;
+interface Dday {
+  name: string;
+  targetDate: Date;
+}
+
 type DdayList = Array<Dday>;

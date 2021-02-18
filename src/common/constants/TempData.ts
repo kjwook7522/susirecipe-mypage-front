@@ -1,20 +1,17 @@
-// export const tempDday: DdayList = [
-//   `<span>
-//     수시전형
-//     <br />
-//     D-31
-//   </span>,
-//   <span>
-//     대학수능능력시험
-//     <br />
-//     D-150
-//   </span>,
-//   <span>
-//     글감짜기 컨설팅
-//     <br />
-//     D-5
-//   </span>`,
-// ];
+export const tempDday: DdayList = [
+  {
+    name: '대학수능능력시험',
+    targetDate: new Date(2021, 10, 18),
+  },
+  {
+    name: '수시원서 마감',
+    targetDate: new Date(2021, 8, 14),
+  },
+  {
+    name: '9월 모의고사',
+    targetDate: new Date(2021, 8, 1),
+  },
+];
 
 export const tempConsultingList: ConsultingList = [
   {
@@ -70,4 +67,7 @@ export const tempNoticeList: NoticeList = [
   '김동빈 컨설턴트가 알려주는 학생부 관리 비법',
 ];
 
-export const tempNewsList: NewsList = ['올해 9월 모의고사 난이도 상승으로 수험생 곤란', '정시 확대로 인해 바뀐 입시 전략'];
+export const tempNewsList: NewsList = [
+  '올해 9월 모의고사 난이도 상승으로 수험생 곤란',
+  '정시 확대로 인해 바뀐 입시 전략',
+];

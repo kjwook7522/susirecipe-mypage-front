@@ -5,7 +5,7 @@ import { RootState } from 'common/store';
 import IndexTemplate from 'templates/IndexTemplate/IndexTemplate';
 import { updateTakeConsulting } from 'actions/takeConsultingList';
 import { updateMyFile } from 'actions/myFileList';
-import { tempConsultingList, tempMyFilesList, tempNewsList, tempNoticeList } from 'common/constants/TempData';
+import { tempConsultingList, tempDday, tempMyFilesList, tempNewsList, tempNoticeList } from 'common/constants/TempData';
 import { updateNews, updateNotice } from 'actions/noticenewsList';
 
 const Index: React.FC = () => {
@@ -16,23 +16,6 @@ const Index: React.FC = () => {
   const noticenewsList = useSelector((state: RootState) => state.noticenewsReducer);
 
   useEffect(() => {
-    const tempDday = [
-      <span>
-        수시전형
-        <br />
-        D-31
-      </span>,
-      <span>
-        대학수능능력시험
-        <br />
-        D-150
-      </span>,
-      <span>
-        글감짜기 컨설팅
-        <br />
-        D-5
-      </span>,
-    ];
 
     dispatch(updateMyFile(tempMyFilesList));
     dispatch(updateDday(tempDday));
