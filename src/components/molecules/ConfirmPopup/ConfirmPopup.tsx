@@ -6,12 +6,20 @@ interface Props {
   confirmCallback?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const ConfirmPopup: React.FC<Props> = ({ children, cancleCallback, confirmCallback}) => {
+const ConfirmPopup: React.FC<Props> = ({ children, cancleCallback, confirmCallback }) => {
+  console.log('confirm popup');
   return (
     <StyledConfirmPopup>
       <StyledPopupContent>{children}</StyledPopupContent>
       <StyledButtonWrapper>
-        <FlexButton width="50%" height="50px" className="cancle-btn" theme="lightred" onClick={cancleCallback}>
+        <FlexButton
+          width="50%"
+          height="50px"
+          className="cancle-btn"
+          theme="lightred"
+          disableSubmit
+          onClick={cancleCallback}
+        >
           취소
         </FlexButton>
         <FlexButton width="50%" height="50px" className="confirm-btn" theme="gray" onClick={confirmCallback}>

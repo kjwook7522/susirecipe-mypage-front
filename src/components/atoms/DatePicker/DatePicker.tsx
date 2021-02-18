@@ -8,7 +8,12 @@ const DatePicker: React.FC = () => {
   const [date, setDate] = useState<Date | Date[]>(new Date());
   return (
     <StyledDatePicker>
-      <ReactDatePicker value={date} clearIcon={null} calendarIcon={<FaRegCalendarAlt />} onChange={value => setDate(value)} />
+      <ReactDatePicker
+        value={date}
+        clearIcon={null}
+        calendarIcon={<FaRegCalendarAlt />}
+        onChange={value => setDate(value)}
+      />
     </StyledDatePicker>
   );
 };

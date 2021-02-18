@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import FlexButton from 'components/atoms/FlexButton/FlexButton';
 import Calendar from 'components/molecules/Calendar/Calendar';
 import ScheduleTodoList from 'components/molecules/ScheduleTodoList/ScheduleTodoList';
@@ -15,13 +15,13 @@ const ScheduleTemplate: React.FC = () => {
   const [activePopup, setActivePopup] = useState(false);
   const [popupRef, plusBtnRef] = useClickOutside(() => setActivePopup(false));
 
-  const handleAddButton = () => {
+  const handleAddButton = useCallback(() => {
     setActivePopup(true);
-  };
+  }, []);
 
-  const canclePopup = () => {
+  const canclePopup = useCallback(() => {
     setActivePopup(false);
-  };
+  }, []);
 
   return (
     <StyledScheduleTemplate>

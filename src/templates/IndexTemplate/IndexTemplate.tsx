@@ -3,8 +3,8 @@ import DdayBoard from 'components/organisms/DdayBoard/DdayBoard';
 import TakingConsulting from 'components/organisms/TakingConsulting/TakingConsulting';
 import MyFiles from 'components/organisms/MyFiles/MyFiles';
 import NoticeNews from 'components/organisms/NoticeNews/NoticeNews';
-import { StyledIndexTemplate, StyledMenuSection, StyledMenuTitle } from './IndexTmeplate.styled';
 import SNSad from 'components/organisms/SNSad/SNSad';
+import { StyledIndexTemplate, StyledMenuSection, StyledMenuTitle } from './IndexTmeplate.styled';
 
 interface Props {
   ddayList: DdayList;

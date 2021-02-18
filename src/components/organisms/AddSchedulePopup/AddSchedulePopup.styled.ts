@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledAddSchedulePopup = styled.div<{top?: string;left?: string;right?: string;bottom?: string;active?: boolean;}>`
+export const StyledAddSchedulePopup = styled.form<{ top?: string; left?: string; right?: string; bottom?: string; active?: boolean }>`
   position: absolute;
   top: ${props => props.top};
   left: ${props => props.left};
@@ -13,8 +13,8 @@ export const StyledAddSchedulePopup = styled.div<{top?: string;left?: string;rig
     color: #333;
     font-size: 1rem;
   }
+`;
 
-  .input-box {
-    margin-bottom: 1rem;
-  }
-`; 
+export const StyledInputBox = styled.div`
+  margin-bottom: 1rem;
+`;

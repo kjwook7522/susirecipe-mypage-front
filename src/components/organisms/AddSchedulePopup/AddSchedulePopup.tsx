@@ -4,7 +4,7 @@ import { addMonthTodo } from 'actions/todoList';
 import ConfirmPopup from 'components/molecules/ConfirmPopup/ConfirmPopup';
 import DatePicker from 'components/atoms/DatePicker/DatePicker';
 import Input from 'components/atoms/Input/Input';
-import { StyledAddSchedulePopup } from './AddSchedulePopup.styled';
+import { StyledAddSchedulePopup, StyledInputBox } from './AddSchedulePopup.styled';
 
 interface Props {
   top?: string;
@@ -31,17 +31,19 @@ const AddSchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) 
     setTitle(value);
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    confirmPopup();
+  };
+
   return (
-    <StyledAddSchedulePopup ref={clickRef} {...props}>
-      <ConfirmPopup
-        cancleCallback={canclePopup}
-        confirmCallback={confirmPopup}
-      >
-        <div className="input-box">
+    <StyledAddSchedulePopup ref={clickRef} {...props} onSubmit={handleSubmit}>
+      <ConfirmPopup cancleCallback={canclePopup}>
+        <StyledInputBox>
           <h1>일정</h1>
           <DatePicker />
-        </div>
-        <div className="input-box">
+        </StyledInputBox>
+        <StyledInputBox>
           <h1>제목</h1>
           <Input
             width="250px"
@@ -50,7 +52,7 @@ const AddSchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) 
             placeholder="일정 제목을 입력하세요"
             onChange={handleInput}
           />
-        </div>
+        </StyledInputBox>
       </ConfirmPopup>
     </StyledAddSchedulePopup>
   );
