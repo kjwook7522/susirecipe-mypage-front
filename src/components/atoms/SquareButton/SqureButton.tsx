@@ -1,3 +1,4 @@
+import React from 'react';
 import { StyledSqureButton } from './SqureButton.styled';
 
 interface Props {
@@ -17,4 +18,4 @@ const SqureButton: React.FC<Props> = ({ children, clickRef, ...props }) => {
   );
 };
 
-export default SqureButton;
+export default React.memo(SqureButton);

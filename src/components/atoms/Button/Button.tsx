@@ -1,3 +1,4 @@
+import React from 'react';
 import { BLACK, GRAY, INSTA, KAKAO, KOBALT, LIGHTRED, RED, SKY } from 'common/constants/ButtonTheme';
 import { StyledSmallButton, StyledMiddleButton } from './Button.styled';
 
@@ -33,18 +34,18 @@ const convertTheme = (color: ButtonColors | undefined): ButtonTheme => {
   }
 };
 
-export const SmallButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
+export const SmallButton: React.FC<Props> = React.memo(({ children, theme, clickRef, ...props }) => {
   return (
     <StyledSmallButton theme={convertTheme(theme)} ref={clickRef} {...props}>
       {children}
     </StyledSmallButton>
   );
-};
+});
 
-export const MiddleButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) => {
+export const MiddleButton: React.FC<Props> = React.memo(({ children, theme, clickRef, ...props }) => {
   return (
     <StyledMiddleButton theme={convertTheme(theme)} ref={clickRef} {...props}>
       {children}
     </StyledMiddleButton>
   );
-};
+});

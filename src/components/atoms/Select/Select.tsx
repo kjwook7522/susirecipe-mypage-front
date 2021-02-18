@@ -1,3 +1,4 @@
+import React from 'react';
 import { StyledSelect } from './Select.styled';
 
 interface Props {
@@ -19,4 +20,4 @@ const Select: React.FC<Props> = ({ list, id, className, value }) => {
   );
 };
 
-export default Select;
+export default React.memo(Select);

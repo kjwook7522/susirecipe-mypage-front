@@ -1,3 +1,4 @@
+import React from 'react';
 import { BLACK, GRAY, INSTA, KAKAO, KOBALT, LIGHTRED, RED, SKY } from 'common/constants/ButtonTheme';
 import { StyledFlexButton } from './FlexButton.styled';
 
@@ -43,4 +44,4 @@ const FlexButton: React.FC<Props> = ({ children, theme, clickRef, ...props }) =>
   );
 };
 
-export default FlexButton;
+export default React.memo(FlexButton);

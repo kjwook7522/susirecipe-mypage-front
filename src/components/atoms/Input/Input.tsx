@@ -1,3 +1,4 @@
+import React from 'react';
 import { StyledInput } from './Input.styled';
 
 interface Props {
@@ -34,4 +35,4 @@ const Input: React.FC<Props> = ({ type = 'text', ...props }) => {
   return <StyledInput type={type} {...props} />;
 };
 
-export default Input;
+export default React.memo(Input);
