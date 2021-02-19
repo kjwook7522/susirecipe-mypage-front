@@ -23,14 +23,9 @@ const MainNavigation: React.FC = () => {
   }, []);
 
   const goConsulting = useCallback(() => {
-    setActivceTab(prev => {
-      if (prev === 'consulting') {
-        return null;
-      } else {
-        return 'consulting';
-      }
-    });
-  }, []);
+    setActivceTab('consulting');
+    history.push('/consulting');
+  }, [history]);
 
   const goUseinfo = useCallback(() => {
     setActivceTab(prev => {
@@ -43,14 +38,9 @@ const MainNavigation: React.FC = () => {
   }, []);
 
   const goVideoclass = useCallback(() => {
-    setActivceTab(prev => {
-      if (prev === 'videoclass') {
-        return null;
-      } else {
-        return 'videoclass';
-      }
-    });
-  }, []);
+    setActivceTab('videoclass');
+    history.push('/videoclass');
+  }, [history]);
 
   const submenus: NavSubMenuList = useMemo(
     () => [
