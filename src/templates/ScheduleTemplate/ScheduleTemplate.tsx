@@ -16,7 +16,7 @@ const ScheduleTemplate: React.FC = () => {
   const [popupRef, plusBtnRef] = useClickOutside(() => setActivePopup(false));
 
   const handleAddButton = useCallback(() => {
-    setActivePopup(true);
+    setActivePopup(prev => !prev);
   }, []);
 
   const canclePopup = useCallback(() => {
@@ -31,7 +31,7 @@ const ScheduleTemplate: React.FC = () => {
         <FlexButton className="plus-btn" width="30px" height="30px" clickRef={plusBtnRef} onClick={handleAddButton}>
           +
         </FlexButton>
-        <AddSchedulePopup active={activePopup} clickRef={popupRef} top="10px" right="7px" canclePopup={canclePopup} />
+        {activePopup && <AddSchedulePopup clickRef={popupRef} top="10px" right="7px" canclePopup={canclePopup} />}
       </StyledCalendarSection>
       <StyledTodoSection>
         <h1>- 이번 달 할일</h1>

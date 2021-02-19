@@ -11,7 +11,6 @@ interface Props {
   left?: string;
   right?: string;
   bottom?: string;
-  active?: boolean;
   clickRef?: React.RefObject<any>;
   canclePopup: () => void;
 }
