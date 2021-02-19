@@ -1,0 +1,44 @@
+import React from 'react';
+import { SmallButton } from 'components/atoms/Button/Button';
+import { useCallback } from 'react';
+import {
+  StyledConsultingCard,
+  StyledThumbnailWrapper,
+  StyledConsultingContent,
+  StyledConsultingInfo,
+  StyledConsultingBtnWrapper,
+} from './ConsultingCard.styled';
+
+interface Props {
+  consulting: ConsultingPreview;
+}
+
+const ConsultingCard: React.FC<Props> = ({ consulting }) => {
+  const warnningMsg = useCallback(() => alert('준비중입니다'), []);
+  return (
+    <StyledConsultingCard>
+      <StyledThumbnailWrapper>
+        <img src={process.env.PUBLIC_URL + '/images/default_profile_img.jpg'} alt="thumbnail" />
+      </StyledThumbnailWrapper>
+
+      <StyledConsultingContent>
+        <StyledConsultingInfo>
+          <h1>{consulting.title}</h1>
+          <h2>담당컨설턴트: {consulting.consultant}</h2>
+          <h2>이용 기간: 2020.01~02</h2>
+        </StyledConsultingInfo>
+
+        <StyledConsultingBtnWrapper>
+          <SmallButton theme="sky" onClick={warnningMsg}>
+            컨설팅룸 입장
+          </SmallButton>
+          <SmallButton theme="sky" onClick={warnningMsg}>
+            화상수업 시작
+          </SmallButton>
+        </StyledConsultingBtnWrapper>
+      </StyledConsultingContent>
+    </StyledConsultingCard>
+  );
+};
+
+export default React.memo(ConsultingCard);
