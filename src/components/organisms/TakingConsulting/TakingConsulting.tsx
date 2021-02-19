@@ -25,7 +25,7 @@ const TakingConsulting: React.FC<Props> = ({ consultingList }) => {
       </StyledTableRow>
 
       {consultingList.map((consulting, idx) => (
-        <StyledTableRow key={idx} active={activeTab === idx}>
+        <StyledTableRow key={consulting.id} active={activeTab === idx}>
           <div className="content-cell" onClick={() => handleTab(idx)}>
             <h1 className="title">
               {consulting.title}

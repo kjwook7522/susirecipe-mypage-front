@@ -13,7 +13,7 @@ const ConsultingTemplate: React.FC<Props> = ({consultingList}) => {
       </StyledHeader>
       <StyledConsultingListSection>
         {consultingList.map(consulting => (
-          <div className="list-item">
+          <div key={consulting.id} className="list-item">
             <ConsultingCard consulting={consulting} />
           </div>
         ))}

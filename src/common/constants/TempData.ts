@@ -15,6 +15,7 @@ export const tempDday: DdayList = [
 
 export const tempConsultingList: ConsultingPreviewList = [
   {
+    id: '7aefc65dc',
     title: '1. 수시레시피 면접 컨설팅',
     consultant: '김동빈 컨설턴트',
     totalTimes: 10,
@@ -26,6 +27,7 @@ export const tempConsultingList: ConsultingPreviewList = [
     progressDay: 86,
   },
   {
+    id: '2b7fcc6c7',
     title: '2. 수시지원 솔루션 컨설팅',
     consultant: '김동빈 컨설턴트',
     totalTimes: 10,
@@ -37,6 +39,7 @@ export const tempConsultingList: ConsultingPreviewList = [
     progressDay: 86,
   },
   {
+    id: '298faf773',
     title: '3. 자기소개서 컨설팅',
     consultant: '김동빈 컨설턴트',
     totalTimes: 10,

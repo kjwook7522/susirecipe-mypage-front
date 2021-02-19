@@ -29,6 +29,7 @@ interface MyTodoList {
 type ConsultingPreviewList = Array<ConsultingPreview>;
 
 interface ConsultingPreview {
+  id: string;
   title: string;
   consultant: string;
   totalTimes?: number;
