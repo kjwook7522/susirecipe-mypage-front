@@ -8,6 +8,7 @@ import {
   StyledConsultingInfo,
   StyledConsultingBtnWrapper,
 } from './ConsultingCard.styled';
+import { Link } from 'react-router-dom';
 
 interface Props {
   consulting: ConsultingPreview;
@@ -29,9 +30,11 @@ const ConsultingCard: React.FC<Props> = ({ consulting }) => {
         </StyledConsultingInfo>
 
         <StyledConsultingBtnWrapper>
-          <SmallButton theme="sky" onClick={warnningMsg}>
-            컨설팅룸 입장
-          </SmallButton>
+          <Link to={`/consulting/${consulting.id}`}>
+            <SmallButton theme="sky">
+              컨설팅룸 입장
+            </SmallButton>
+          </Link>
           <SmallButton theme="sky" onClick={warnningMsg}>
             화상수업 시작
           </SmallButton>
