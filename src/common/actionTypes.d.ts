@@ -20,6 +20,11 @@ interface TakeConsultingListAction {
   consultingList: ConsultingList;
 }
 
+interface ConsultingAction {
+  type: 'UPDATE_CONSULTING';
+  consulting: Consulting;
+}
+
 interface MyFileListAction {
   type: 'UPDATE_MYFILE';
   myFileList: MyFileList;

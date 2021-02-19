@@ -41,6 +41,12 @@ interface ConsultingPreview {
   progressDay?: number;
 }
 
+interface Consulting {
+  id: string;
+  title: string;
+  consultant: string;
+}
+
 // MyFile //
 interface MyFile {
   title: string;
