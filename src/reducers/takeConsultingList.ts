@@ -1,6 +1,6 @@
 import { UPDATE_TAKE_CONSULTING } from 'actions/takeConsultingList';
 
-const initState: ConsultingList = [];
+const initState: ConsultingPreviewList = [];
 
 export const takeConsultingReducer = (state = initState, action: TakeConsultingListAction) => {
   switch (action.type) {

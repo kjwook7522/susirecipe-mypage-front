@@ -1,6 +1,6 @@
 export const UPDATE_TAKE_CONSULTING = 'UPDATE_TAKE_CONSULTING';
 
-export const updateTakeConsulting = (consultingList: ConsultingList): TakeConsultingListAction => ({
+export const updateTakeConsulting = (consultingList: ConsultingPreviewList): TakeConsultingListAction => ({
   type: UPDATE_TAKE_CONSULTING,
   consultingList,
 });

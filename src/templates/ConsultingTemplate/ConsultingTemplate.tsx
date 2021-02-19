@@ -2,7 +2,7 @@ import ConsultingCard from 'components/molecules/ConsultingCard/ConsultingCard';
 import { StyledConsultingTemplate, StyledHeader, StyledConsultingListSection } from './ConsultingTemplate.styled';
 
 interface Props {
-  consultingList: ConsultingList;
+  consultingList: ConsultingPreviewList;
 }
 
 const ConsultingTemplate: React.FC<Props> = ({consultingList}) => {

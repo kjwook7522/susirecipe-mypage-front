@@ -26,7 +26,7 @@ interface MyTodoList {
 }
 
 // Consulting //
-type ConsultingList = Array<ConsultingPreview>;
+type ConsultingPreviewList = Array<ConsultingPreview>;
 
 interface ConsultingPreview {
   title: string;

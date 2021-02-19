@@ -3,7 +3,7 @@ import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { useState } from 'react';
 
 interface Props {
-  consultingList: ConsultingList;
+  consultingList: ConsultingPreviewList;
 }
 
 const TakingConsulting: React.FC<Props> = ({ consultingList }) => {

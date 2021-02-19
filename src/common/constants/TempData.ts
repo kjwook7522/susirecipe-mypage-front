@@ -13,7 +13,7 @@ export const tempDday: DdayList = [
   },
 ];
 
-export const tempConsultingList: ConsultingList = [
+export const tempConsultingList: ConsultingPreviewList = [
   {
     title: '1. 수시레시피 면접 컨설팅',
     consultant: '김동빈 컨설턴트',

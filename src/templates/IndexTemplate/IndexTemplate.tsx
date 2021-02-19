@@ -8,7 +8,7 @@ import { StyledIndexTemplate, StyledMenuSection, StyledMenuTitle } from './Index
 
 interface Props {
   ddayList: DdayList;
-  takeConsultingList: ConsultingList;
+  takeConsultingList: ConsultingPreviewList;
   myFileList: MyFileList;
   noticeList: NoticeList;
   newsList: NewsList;
