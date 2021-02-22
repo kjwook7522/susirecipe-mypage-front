@@ -39,18 +39,35 @@ export const StyledRightHeader = styled.div`
 
 export const StyledUserBox = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const StyledUser = styled.div`
+  margin-bottom: 0.8rem;
+  display: flex;
   align-items: center;
 
   img {
     width: 30px;
     height: 30px;
-    margin-left: 1rem;
+    margin-left: 0.6rem;
     border-radius: 50%;
   }
 
   .username {
     color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
+`;
+
+export const StyledComment = styled.span`
+  color: #fff;
+  font-size: 0.85rem;
 `;
 
 export const StyledIconBox = styled.div`
