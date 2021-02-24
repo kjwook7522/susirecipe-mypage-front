@@ -28,20 +28,22 @@ const QuickNavigation: React.FC = () => {
       <StyledNavSection>
         <h1>바로가기</h1>
         <StyledQuickButtonWrapper>
-          <SquareButton size="45%" style={{ margin: '0.3rem' }}>
-            이용 중인
-            <br />
-            프로그램
-          </SquareButton>
-          <SquareButton size="45%" style={{ margin: '0.3rem' }}>
-            결제 관리
-          </SquareButton>
-          <SquareButton size="45%" style={{ margin: '0.3rem' }}>
-            화상 수업
-          </SquareButton>
-          <SquareButton size="45%" style={{ margin: '0.3rem' }}>
-            FAQ
-          </SquareButton>
+          <Link to="/consulting">
+            <SquareButton size="100%">
+              이용 중인
+              <br />
+              프로그램
+            </SquareButton>
+          </Link>
+          <Link to="/">
+            <SquareButton size="100%">결제 관리</SquareButton>
+          </Link>
+          <Link to="/">
+            <SquareButton size="100%">화상 수업</SquareButton>
+          </Link>
+          <Link to="/">
+            <SquareButton size="100%">FAQ</SquareButton>
+          </Link>
         </StyledQuickButtonWrapper>
       </StyledNavSection>
     </StyledNavigation>

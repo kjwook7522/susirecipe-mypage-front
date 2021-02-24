@@ -29,6 +29,11 @@ export const StyledNavSection = styled.section`
     font-weight: 600;
   }
 
+  a {
+    width: 45%;
+    margin: 0.3rem;
+  }
+
   .detail-btn {
     position: absolute;
     top: -5px;

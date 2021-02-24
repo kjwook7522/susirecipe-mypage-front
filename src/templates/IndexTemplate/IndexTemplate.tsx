@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { SmallButton } from 'components/atoms/Button/Button';
 import DdayBoard from 'components/organisms/DdayBoard/DdayBoard';
 import TakingConsulting from 'components/organisms/TakingConsulting/TakingConsulting';
@@ -23,9 +24,11 @@ const IndexTemplate: React.FC<Props> = ({ ddayList, takeConsultingList, myFileLi
 
       <StyledMenuSection>
         <StyledMenuTitle>수강 컨설팅 확인하기</StyledMenuTitle>
-        <SmallButton className="detail-btn" theme="sky">
-          자세히 보기
-        </SmallButton>
+        <Link to="consulting">
+          <SmallButton className="detail-btn" theme="sky">
+            자세히 보기
+          </SmallButton>
+        </Link>
         <TakingConsulting consultingList={takeConsultingList} />
       </StyledMenuSection>
 
