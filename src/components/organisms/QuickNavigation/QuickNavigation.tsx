@@ -41,7 +41,7 @@ const QuickNavigation: React.FC = () => {
           <Link to="/">
             <SquareButton size="100%">화상 수업</SquareButton>
           </Link>
-          <Link to="/">
+          <Link to="/faq">
             <SquareButton size="100%">FAQ</SquareButton>
           </Link>
         </StyledQuickButtonWrapper>

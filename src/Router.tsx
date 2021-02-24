@@ -6,12 +6,16 @@ import PayManage from 'pages/PayManage';
 import MainLayout from 'layouts/MainLayout/MainLayout';
 import Consulting from 'pages/consulting/Consulting';
 import ConsultingProgram from 'pages/consulting/ConsultingProgram';
+import FAQ from 'pages/FAQ';
 
 const AppRouter: React.FC = () => {
   return (
     <Router>
       <MainLayout>
         <Switch>
+          <Route path="/faq">
+            <FAQ />
+          </Route>
           <Route path="/consulting/:programid">
             <ConsultingProgram />
           </Route>

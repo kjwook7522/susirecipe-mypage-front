@@ -60,6 +60,15 @@ const MainNavigation: React.FC = () => {
       case '/consulting':
         setActivceTab('consulting');
         break;
+      case '/notice':
+        setActivceTab('useinfo');
+        break;
+      case '/news':
+        setActivceTab('useinfo');
+        break;
+      case '/faq':
+        setActivceTab('useinfo');
+        break;
       default:
         break;
     }
