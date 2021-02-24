@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const StyledNavigation = styled.nav`
   width: ${QUICK_NAVIGATION_WIDTH}px;
   height: calc(100vh - ${HEADER_HEIGHT}px);
-  padding: 0 1rem;
+  padding: 0 1.7rem;
   position: fixed;
   top: ${HEADER_HEIGHT}px;
   right: 0;
