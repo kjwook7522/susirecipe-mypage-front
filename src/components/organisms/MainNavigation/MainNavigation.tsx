@@ -1,9 +1,10 @@
-import { useCallback, useMemo, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import NavDropdownMenu from 'components/molecules/NavDropdownMenu/NavDropdownMenu';
 import { StyledNavigation } from './MainNavigation.styled';
 
 const MainNavigation: React.FC = () => {
+  const { pathname } = useLocation();
   const history = useHistory();
   const [activeTab, setActivceTab] = useState<NavMenuTab>(null);
 
@@ -41,6 +42,28 @@ const MainNavigation: React.FC = () => {
     setActivceTab('videoclass');
     history.push('/videoclass');
   }, [history]);
+
+  useEffect(() => {
+    switch (pathname) {
+      case '/':
+        setActivceTab('dashboard');
+        break;
+      case '/editprofile':
+        setActivceTab('myinfo');
+        break;
+      case '/schedule':
+        setActivceTab('myinfo');
+        break;
+      case '/paymanage':
+        setActivceTab('myinfo');
+        break;
+      case '/consulting':
+        setActivceTab('consulting');
+        break;
+      default:
+        break;
+    }
+  }, [pathname]);
 
   const submenus: NavSubMenuList = useMemo(
     () => [
