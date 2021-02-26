@@ -112,3 +112,11 @@ export const tempFAQlist: FAQList = [
     createdAt: '2021.02.24',
   },
 ];
+
+export const tempTodayTodo: TodoList = ['김윤환 컨설턴트와 컨설팅 예약'];
+export const tempMonthTodo: TodoList = [
+  '8일 김윤환 컨설턴트와 컨설팅',
+  '15일 자기소개서 제출하기',
+  '22일 면접 준비하기',
+  '29일 김윤환 컨설턴트와 컨설팅',
+];
