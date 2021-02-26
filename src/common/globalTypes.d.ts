@@ -72,3 +72,14 @@ interface Dday {
 }
 
 type DdayList = Array<Dday>;
+
+// FAQ //
+interface FAQ {
+  id: string;
+  title: string;
+  author: string;
+  answer: string;
+  createdAt: string;
+}
+
+type FAQList = Array<FAQ>;

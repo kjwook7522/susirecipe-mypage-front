@@ -74,3 +74,41 @@ export const tempNewsList: NewsList = [
   '올해 9월 모의고사 난이도 상승으로 수험생 곤란',
   '정시 확대로 인해 바뀐 입시 전략',
 ];
+
+export const tempFAQlist: FAQList = [
+  {
+    id: '1',
+    title: 'Q. 수시레시피 개인정보 입력을 안하면 LMS 사용을 못하나요?',
+    author: '김재욱',
+    answer: 'A. sdfasfdsasdsadfasdfdsafsadfdsafadsfads',
+    createdAt: '2021.02.24',
+  },
+  {
+    id: '2',
+    title: 'Q. 수시레시피 개인정보 입력을 안하면 LMS 사용을 못하나요?',
+    author: '김재욱',
+    answer: 'A. sdfasfdsasdsadfasdfdsafsadfdsafadsfads',
+    createdAt: '2021.02.24',
+  },
+  {
+    id: '3',
+    title: 'Q. 수시레시피 개인정보 입력을 안하면 LMS 사용을 못하나요?',
+    author: '김재욱',
+    answer: 'A. sdfasfdsasdsadfasdfdsafsadfdsafadsfads',
+    createdAt: '2021.02.24',
+  },
+  {
+    id: '4',
+    title: 'Q. 수시레시피 개인정보 입력을 안하면 LMS 사용을 못하나요?',
+    author: '김재욱',
+    answer: 'A. sdfasfdsasdsadfasdfdsafsadfdsafadsfads',
+    createdAt: '2021.02.24',
+  },
+  {
+    id: '5',
+    title: 'Q. 수시레시피 개인정보 입력을 안하면 LMS 사용을 못하나요?',
+    author: '김재욱',
+    answer: 'A. sdfasfdsasdsadfasdfdsafsadfdsafadsfads',
+    createdAt: '2021.02.24',
+  },
+];
