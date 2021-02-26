@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const StyledFAQBoard = styled.table`
+export const StyledFAQBoard = styled.div``;
+
+export const StyledTable = styled.table`
   width: 100%;
 
   thead {
@@ -9,6 +11,44 @@ export const StyledFAQBoard = styled.table`
 
   tbody {
     background-color: #f6f6f6;
+  }
+`;
+
+export const StyledSearchBar = styled.form`
+  height: 30px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+
+  select {
+    border: 1px solid #d6d6d6;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input {
+    width: 250px;
+    margin-left: 0.6rem;
+    padding: 0.5em;
+    border: 1px solid #d6d6d6;
+    font-size: 0.85rem;
+    color: #333;
+
+    &:focus {
+      outline: none;
+      border: 1px solid #a6a6a6;
+    }
+  }
+
+  button {
+    width: 35px;
+    margin-left: 0.6rem;
+    border: 1px solid transparent;
+    background-color: #4a9cd3;
+    color: #fff;
+    cursor: pointer;
   }
 `;
 
@@ -67,7 +107,7 @@ export const StyledBodyRow = styled.tr`
 
 export const StyledHiddenRow = styled.tr<{ active?: boolean }>`
   td {
-    font-size: ${props => props.active ? '1rem': 0};
+    font-size: ${props => (props.active ? '1rem' : 0)};
   }
 
   td:nth-child(2) {
@@ -81,5 +121,38 @@ export const StyledHiddenRow = styled.tr<{ active?: boolean }>`
     padding: ${props => (props.active ? '2.5em 0.6em' : '0 3em')};
     overflow: ${props => (props.active ? 'scroll' : 'hidden')};
     transition: max-height 0.3s, padding 0.5s;
+  }
+`;
+
+export const StyledPagination = styled.div`
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledPageButton = styled.button<{ active?: boolean }>`
+  width: 40px;
+  height: 40px;
+  margin: 0 0.3rem;
+  border: none;
+  background-color: ${props => (props.active ? '#39759f' : '#f6f6f6')};
+  color: ${props => (props.active ? '#fff' : '#333')};
+  font-size: 0.9rem;
+  cursor: pointer;
+`;
+
+export const StyledArrowButton = styled.button`
+  width: 40px;
+  height: 40px;
+  margin: 0 0.3rem;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f6f6f6;
   }
 `;
