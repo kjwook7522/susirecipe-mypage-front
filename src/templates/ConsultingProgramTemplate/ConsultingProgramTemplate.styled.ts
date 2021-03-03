@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const StyledConsultingProgramTemplate = styled.div`
-  padding: 2.5rem 4.5rem;
-`;
-
 export const StyledConsultingHeader = styled.div`
   width: 100%;
   padding: 1rem 4.5rem;
@@ -42,5 +38,24 @@ export const StyledProgramPeriod = styled.div`
     color: #fff;
     font-weight: 600;
     font-size: 0.8rem;
+  }
+`;
+
+export const StyledConsultingProgramTemplate = styled.div`
+  padding: 2.5rem 4.5rem;
+`;
+
+export const StyledToggleTitle = styled.div`
+  margin-bottom: 4rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #909090;
+
+  span {
+    cursor: pointer;
+  }
+
+  .active {
+    color: #000;
   }
 `;

@@ -1,8 +1,11 @@
+import { useState } from 'react';
+import ProgressDotBar from 'components/organisms/ProgressDotBar/ProgressDotBar';
 import {
   StyledConsultingHeader,
   StyledConsultingProgramTemplate,
   StyledProgramTitle,
   StyledProgramPeriod,
+  StyledToggleTitle,
 } from './ConsultingProgramTemplate.styled';
 
 interface Props {
@@ -10,6 +13,8 @@ interface Props {
 }
 
 const ConsultingProgramTemplate: React.FC<Props> = ({ consulting }) => {
+  const [activeTab, setActiveTab] = useState<ConsultingDiaryTab>('consulting');
+
   return (
     <>
       <StyledConsultingHeader>
@@ -25,7 +30,20 @@ const ConsultingProgramTemplate: React.FC<Props> = ({ consulting }) => {
         </StyledProgramPeriod>
       </StyledConsultingHeader>
 
-      <StyledConsultingProgramTemplate></StyledConsultingProgramTemplate>
+      <StyledConsultingProgramTemplate>
+        <StyledToggleTitle>
+        <span className={activeTab === 'consulting' ? 'active' : undefined} onClick={() => setActiveTab('consulting')}>
+          메인
+        </span>{' '}
+        |{' '}
+        <span className={activeTab === 'diary' ? 'active' : undefined} onClick={() => setActiveTab('diary')}>
+          일지록
+        </span>
+        </StyledToggleTitle>
+
+        <ProgressDotBar consultingFileList={[1, 2, 3, 4, 5, 6, 7, 8, 9]} />
+        <ProgressDotBar consultingFileList={[11]} />
+      </StyledConsultingProgramTemplate>
     </>
   );
 };

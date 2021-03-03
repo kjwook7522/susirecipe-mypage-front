@@ -47,6 +47,8 @@ interface Consulting {
   consultant: string;
 }
 
+type ConsultingDiaryTab = 'consulting' | 'diary';
+
 // MyFile //
 interface MyFile {
   title: string;
