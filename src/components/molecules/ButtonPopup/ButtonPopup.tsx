@@ -1,9 +1,9 @@
+import React, { useCallback, useState } from 'react';
 import { useClickOutside } from 'hooks/useClickOutside';
-import React, { useState } from 'react';
 
 interface Props {
   buttonComponent: React.FC<{
-    onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onClick?: (event: React.MouseEvent<any, MouseEvent>) => void;
     clickRef?: React.RefObject<any>;
   }>;
   buttonProps?: any;
@@ -17,12 +17,16 @@ const ButtonPopup: React.FC<Props> = ({ buttonComponent, buttonProps, buttonChil
   const PopupComponent = popupComponent;
   const [isPopup, setIsPopup] = useState(false);
   const [popupRef, buttonRef] = useClickOutside(() => setIsPopup(false));
+
+  const togglePopup = useCallback(() => {
+    setIsPopup(prev => !prev);
+  }, []);
   return (
     <>
-      <ButtonComponent clickRef={buttonRef} onClick={() => setIsPopup(prev => !prev)} {...buttonProps}>
+      <ButtonComponent clickRef={buttonRef} onClick={togglePopup} {...buttonProps}>
         {buttonChildren}
       </ButtonComponent>
-      {isPopup && <PopupComponent clickRef={popupRef} {...popupProps} />}
+      {isPopup && <PopupComponent clickRef={popupRef} cancleCallback={() => setIsPopup(false)} {...popupProps} />}
     </>
   );
 };

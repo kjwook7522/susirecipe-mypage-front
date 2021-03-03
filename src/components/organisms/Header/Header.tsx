@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useClickOutside } from 'hooks/useClickOutside';
 import ProfilePopup from 'components/molecules/ProfilePopup/ProfilePopup';
 import {
   StyledHaeder,
@@ -14,19 +13,27 @@ import {
 import { BsBellFill } from 'react-icons/bs';
 import { IoPower } from 'react-icons/io5';
 import AlarmPopup from 'components/molecules/AlarmPopup/AlarmPopup';
+import ButtonPopup from 'components/molecules/ButtonPopup/ButtonPopup';
+
+const userNameComponent: React.FC<{
+  clickRef?: React.RefObject<any>;
+  onClick?: (event: React.MouseEvent<any, MouseEvent>) => void;
+}> = React.memo(({ children, clickRef, onClick }) => (
+  <span className="username" ref={clickRef} onClick={onClick}>
+    {children}
+  </span>
+));
+
+const alarmIconComponent: React.FC<{
+  clickRef?: React.RefObject<any>;
+  onClick?: (event: React.MouseEvent<any, MouseEvent>) => void;
+}> = React.memo(({ children, clickRef, onClick }) => (
+  <span className="icon alarm" ref={clickRef} onClick={onClick}>
+    {children}
+  </span>
+));
 
 const Header: React.FC = () => {
-  const [activeProfile, setActiveProfile] = useState(false);
-  const [activeAlarm, setActiveAlarm] = useState(false);
-  const cancleProfile = () => {
-    setActiveProfile(false);
-  };
-  const cancleAlarm = () => {
-    setActiveAlarm(false);
-  };
-  const [profileRef, profileBtnRef] = useClickOutside(cancleProfile);
-  const [alarmRef, alarmBtnRef] = useClickOutside(cancleAlarm);
-
   return (
     <StyledHaeder>
       <StyledLeftHeader>
@@ -39,25 +46,22 @@ const Header: React.FC = () => {
       <StyledRightHeader>
         <StyledUserBox>
           <StyledUser>
-            <span className="username" ref={profileBtnRef} onClick={() => setActiveProfile(prev => !prev)}>
-              김동빈
-            </span>
+            <ButtonPopup buttonComponent={userNameComponent} buttonChildren="김동빈" popupComponent={ProfilePopup} />
             <img src={process.env.PUBLIC_URL + '/images/default_profile_img.jpg'} alt="user_img" />
           </StyledUser>
           <StyledComment>김동빈님도, 배우면바뀐다</StyledComment>
         </StyledUserBox>
 
         <StyledIconBox>
-          <span className="icon alarm" ref={alarmBtnRef} onClick={() => setActiveAlarm(prev => !prev)}>
-            <BsBellFill />{' '}
-          </span>
+          <ButtonPopup
+            buttonComponent={alarmIconComponent}
+            buttonChildren={<BsBellFill />}
+            popupComponent={AlarmPopup}
+          />
           <span className="icon power">
             <IoPower />
           </span>
         </StyledIconBox>
-
-        {activeProfile && <ProfilePopup clickRef={profileRef} cancleCallback={cancleProfile} />}
-        {activeAlarm && <AlarmPopup clickRef={alarmRef} />}
       </StyledRightHeader>
     </StyledHaeder>
   );

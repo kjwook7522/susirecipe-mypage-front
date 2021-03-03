@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledProfilePopup = styled.div`
   padding: 2rem 5rem;
   position: absolute;
-  bottom: -230px;
+  bottom: -200px;
   right: 100px;
   display: flex;
   flex-direction: column;
