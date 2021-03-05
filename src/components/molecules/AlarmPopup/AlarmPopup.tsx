@@ -3,14 +3,18 @@ import { StyledAlarmList, StyledAlarmPopup, StyledMoreWrapper, StyledTitle } fro
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 interface Props {
+  top?: string;
+  left?: string;
+  right?: string;
+  bottom?: string;
   clickRef?: React.RefObject<any>;
 }
 
-const AlarmPopup: React.FC<Props> = ({ clickRef }) => {
+const AlarmPopup: React.FC<Props> = ({ clickRef, ...props }) => {
   const [activeMore, setActiveMore] = useState(false);
 
   return (
-    <StyledAlarmPopup ref={clickRef}>
+    <StyledAlarmPopup ref={clickRef} {...props}>
       <StyledTitle>전체 알림</StyledTitle>
       <StyledAlarmList active={activeMore}>
         <li>

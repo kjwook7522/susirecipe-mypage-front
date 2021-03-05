@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
-export const StyledAlarmPopup = styled.div`
+export const StyledAlarmPopup = styled.div<{ top?: string; left?: string; right?: string; bottom?: string }>`
   width: 250px;
   position: absolute;
-  top: 90px;
-  right: 10px;
+  top: ${props => props.top};
+  left: ${props => props.left};
+  right: ${props => props.right};
+  bottom: ${props => props.bottom};
   display: flex;
   flex-direction: column;
   border: none;
