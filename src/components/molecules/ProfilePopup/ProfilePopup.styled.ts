@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
-export const StyledProfilePopup = styled.div`
-  padding: 2rem 5rem;
+export const StyledProfilePopup = styled.div<{ top?: string; left?: string; right?: string; bottom?: string }>`
+  width: 220px;
+  padding: 2rem;
   position: absolute;
-  bottom: -200px;
-  right: 100px;
+  top: ${props => props.top};
+  left: ${props => props.left};
+  right: ${props => props.right};
+  bottom: ${props => props.bottom};
   display: flex;
   flex-direction: column;
   align-items: center;
