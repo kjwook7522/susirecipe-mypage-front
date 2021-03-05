@@ -13,6 +13,9 @@ export const StyledPageTitle = styled.div`
 export const StyledCalendarSection = styled.section`
   margin-bottom: 3rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
   .react-calendar {
     button {
@@ -26,12 +29,6 @@ export const StyledCalendarSection = styled.section`
 
     .react-calendar__month-view__days {
     }
-  }
-
-  .plus-btn {
-    position: absolute;
-    top: -30px;
-    right: 7px;
   }
 `;
 
