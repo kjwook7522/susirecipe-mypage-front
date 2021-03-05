@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledAddSchedulePopup = styled.form<{ top?: string; left?: string; right?: string; bottom?: string; }>`
+export const StyledSchedulePopup = styled.form<{ top?: string; left?: string; right?: string; bottom?: string; }>`
   position: absolute;
   top: ${props => props.top};
   left: ${props => props.left};

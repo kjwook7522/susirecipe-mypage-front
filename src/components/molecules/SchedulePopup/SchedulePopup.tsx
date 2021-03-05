@@ -4,7 +4,7 @@ import { addMonthTodo } from 'actions/todoList';
 import ConfirmPopup from 'components/molecules/ConfirmPopup/ConfirmPopup';
 import DatePicker from 'components/atoms/DatePicker/DatePicker';
 import Input from 'components/atoms/Input/Input';
-import { StyledAddSchedulePopup, StyledInputBox } from './AddSchedulePopup.styled';
+import { StyledSchedulePopup, StyledInputBox } from './SchedulePopup.styled';
 
 interface Props {
   top?: string;
@@ -15,7 +15,7 @@ interface Props {
   canclePopup: () => void;
 }
 
-const AddSchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) => {
+const SchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
 
@@ -36,7 +36,7 @@ const AddSchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) 
   };
 
   return (
-    <StyledAddSchedulePopup ref={clickRef} {...props} onSubmit={handleSubmit}>
+    <StyledSchedulePopup ref={clickRef} {...props} onSubmit={handleSubmit}>
       <ConfirmPopup cancleCallback={canclePopup}>
         <StyledInputBox>
           <h1>일정</h1>
@@ -54,8 +54,8 @@ const AddSchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) 
           />
         </StyledInputBox>
       </ConfirmPopup>
-    </StyledAddSchedulePopup>
+    </StyledSchedulePopup>
   );
 };
 
-export default AddSchedulePopup;
+export default SchedulePopup;
