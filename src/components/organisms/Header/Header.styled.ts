@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { HEADER_HEIGHT } from 'common/constants/FixStyle';
+import { StyledIconButton } from 'components/atoms/IconButton/IconButton.styled';
 
 export const StyledHaeder = styled.header`
   width: 100%;
@@ -45,23 +46,15 @@ export const StyledUserBox = styled.div`
 
 export const StyledUser = styled.div`
   margin-bottom: 0.8rem;
+  position: relative;
   display: flex;
   align-items: center;
 
-  img {
+  .profile-img {
     width: 30px;
     height: 30px;
     margin-left: 0.6rem;
     border-radius: 50%;
-  }
-
-  .username {
-    color: #fff;
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 `;
 
@@ -74,35 +67,7 @@ export const StyledIconBox = styled.div`
   display: flex;
   margin-left: 2.5rem;
 
-  .icon {
-    margin-left: 0.8rem;
-    padding: 0.4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    background-color: #fff;
-    font-size: 1.3rem;
-    cursor: pointer;
-  }
-
-  .alarm {
-    color: #404040;
-    transition: all 0.4s ease-out;
-
-    &:hover {
-      background-color: #404040;
-      color: #fff;
-    }
-  }
-
-  .power {
-    color: #fa001d;
-    transition: all 0.4s ease-out;
-
-    &:hover {
-      background-color: #fa001d;
-      color: #fff;
-    }
+  ${StyledIconButton} {
+    margin-left: 1rem;
   }
 `;

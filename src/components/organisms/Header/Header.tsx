@@ -1,6 +1,4 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import ProfilePopup from 'components/molecules/ProfilePopup/ProfilePopup';
 import {
   StyledHaeder,
   StyledLeftHeader,
@@ -10,28 +8,10 @@ import {
   StyledUser,
   StyledComment,
 } from './Header.styled';
-import { BsBellFill } from 'react-icons/bs';
 import { IoPower } from 'react-icons/io5';
-import AlarmPopup from 'components/molecules/AlarmPopup/AlarmPopup';
-import ButtonPopup from 'components/molecules/ButtonPopup/ButtonPopup';
-
-const userNameComponent: React.FC<{
-  clickRef?: React.RefObject<any>;
-  onClick?: (event: React.MouseEvent<any, MouseEvent>) => void;
-}> = React.memo(({ children, clickRef, onClick }) => (
-  <span className="username" ref={clickRef} onClick={onClick}>
-    {children}
-  </span>
-));
-
-const alarmIconComponent: React.FC<{
-  clickRef?: React.RefObject<any>;
-  onClick?: (event: React.MouseEvent<any, MouseEvent>) => void;
-}> = React.memo(({ children, clickRef, onClick }) => (
-  <span className="icon alarm" ref={clickRef} onClick={onClick}>
-    {children}
-  </span>
-));
+import ProfilePopupModule from 'components/molecules/ProfilePopupModule/ProfilePopupModule';
+import IconButton from 'components/atoms/IconButton/IconButton';
+import AlarmPopupModule from 'components/molecules/AlarmPopupModule/AlarmPopupModule';
 
 const Header: React.FC = () => {
   return (
@@ -46,21 +26,22 @@ const Header: React.FC = () => {
       <StyledRightHeader>
         <StyledUserBox>
           <StyledUser>
-            <ButtonPopup buttonComponent={userNameComponent} buttonChildren="김동빈" popupComponent={ProfilePopup} />
-            <img src={process.env.PUBLIC_URL + '/images/default_profile_img.jpg'} alt="user_img" />
+            <ProfilePopupModule userName="김동빈" />
+            <img
+              className="profile-img"
+              src={process.env.PUBLIC_URL + '/images/default_profile_img.jpg'}
+              alt="user_img"
+            />
           </StyledUser>
           <StyledComment>김동빈님도, 배우면바뀐다</StyledComment>
         </StyledUserBox>
 
         <StyledIconBox>
-          <ButtonPopup
-            buttonComponent={alarmIconComponent}
-            buttonChildren={<BsBellFill />}
-            popupComponent={AlarmPopup}
-          />
-          <span className="icon power">
+          <AlarmPopupModule />
+          {/* <div style={{margin: '0.5rem'}}></div> */}
+          <IconButton color="#fa001d">
             <IoPower />
-          </span>
+          </IconButton>
         </StyledIconBox>
       </StyledRightHeader>
     </StyledHaeder>
