@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addMonthTodo } from 'actions/todoList';
-import ConfirmPopup from 'components/molecules/ConfirmPopup/ConfirmPopup';
 import DatePicker from 'components/atoms/DatePicker/DatePicker';
 import Input from 'components/atoms/Input/Input';
-import { StyledSchedulePopup, StyledInputBox } from './SchedulePopup.styled';
+import { StyledSchedulePopup, StyledInputBox, StyledContentWrapper, StyledButtonWrapper } from './SchedulePopup.styled';
+import FlexButton from 'components/atoms/FlexButton/FlexButton';
 
 interface Props {
   top?: string;
@@ -12,17 +12,17 @@ interface Props {
   right?: string;
   bottom?: string;
   clickRef?: React.RefObject<any>;
-  canclePopup: () => void;
+  handleCancle: () => void;
 }
 
-const SchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) => {
+const SchedulePopup: React.FC<Props> = ({ clickRef, handleCancle, ...props }) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
 
-  const confirmPopup = () => {
+  const handleOk = () => {
     dispatch(addMonthTodo(title));
     setTitle('');
-    canclePopup();
+    handleCancle();
   };
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,12 +32,12 @@ const SchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) => 
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    confirmPopup();
+    handleOk();
   };
 
   return (
     <StyledSchedulePopup ref={clickRef} {...props} onSubmit={handleSubmit}>
-      <ConfirmPopup cancleCallback={canclePopup}>
+      <StyledContentWrapper>
         <StyledInputBox>
           <h1>일정</h1>
           <DatePicker />
@@ -53,7 +53,22 @@ const SchedulePopup: React.FC<Props> = ({ clickRef, canclePopup, ...props }) => 
             onChange={handleInput}
           />
         </StyledInputBox>
-      </ConfirmPopup>
+      </StyledContentWrapper>
+      <StyledButtonWrapper>
+        <FlexButton
+          width="50%"
+          height="50px"
+          className="cancle-btn"
+          theme="lightred"
+          disableSubmit
+          onClick={handleCancle}
+        >
+          취소
+        </FlexButton>
+        <FlexButton width="50%" height="50px" className="confirm-btn" theme="gray" onClick={handleOk}>
+          확인
+        </FlexButton>
+      </StyledButtonWrapper>
     </StyledSchedulePopup>
   );
 };
