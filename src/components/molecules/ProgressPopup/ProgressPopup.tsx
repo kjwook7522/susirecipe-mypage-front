@@ -6,12 +6,15 @@ interface Props {
   right?: string;
   bottom?: string;
   clickRef?: React.RefObject<any>;
+  fileList?: Array<ConsultingFile>;
 }
 
-const ProgressPopup: React.FC<Props> = ({ clickRef, ...props }) => {
+const ProgressPopup: React.FC<Props> = ({ clickRef, fileList, ...props }) => {
   return (
     <StyledProgressPopup ref={clickRef} {...props}>
-      123
+      {fileList?.map(file => (
+        <p key={file.id}>{file.name}</p>
+      ))}
       <StyledTriArrow />
     </StyledProgressPopup>
   );

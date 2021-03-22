@@ -7,6 +7,7 @@ import {
   StyledProgramPeriod,
   StyledToggleTitle,
 } from './ConsultingProgramTemplate.styled';
+import { tempConsultingFileList } from 'common/constants/TempData';
 
 interface Props {
   consulting: Consulting;
@@ -41,8 +42,7 @@ const ConsultingProgramTemplate: React.FC<Props> = ({ consulting }) => {
         </span>
         </StyledToggleTitle>
 
-        <ProgressDotBar consultingFileList={[1, 2, 3, 4, 5, 6, 7, 8, 9]} />
-        <ProgressDotBar consultingFileList={[11]} />
+        <ProgressDotBar consultingFileList={tempConsultingFileList} />
       </StyledConsultingProgramTemplate>
     </>
   );

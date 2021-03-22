@@ -49,6 +49,20 @@ interface Consulting {
 
 type ConsultingDiaryTab = 'consulting' | 'diary';
 
+interface ConsultingFile {
+  id: string;
+  name: string;
+  data?: File;
+  fileType: 'pdf' | 'hwp' | 'doc' | 'png' | 'jpg' | 'jpeg' | 'gif' | 'mp3' | 'wav' | 'mp4' | 'avi'
+}
+
+interface ConsultingDayFiles {
+  times: number;
+  files: Array<ConsultingFile>;
+}
+
+type ConsultingFileList = Array<ConsultingDayFiles>;
+
 // MyFile //
 interface MyFile {
   title: string;
