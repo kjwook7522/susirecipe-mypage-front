@@ -1,3 +1,14 @@
+import {
+  DdayList,
+  ConsultingPreviewList,
+  MyFileList,
+  NoticeList,
+  NewsList,
+  FAQList,
+  TodoList,
+  ConsultingFileList,
+} from '@objects';
+
 export const tempDday: DdayList = [
   {
     name: '대학수능능력시험',

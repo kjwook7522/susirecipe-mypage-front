@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { FaSearch, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { tempFAQlist } from 'common/constants/TempData';
 import {
   StyledFAQBoard,
   StyledSearchBar,
@@ -10,14 +13,11 @@ import {
   StyledPageButton,
   StyledArrowButton,
 } from './FAQBoard.styled';
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import { FaSearch, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { tempFAQlist } from 'common/constants/TempData';
 
 const FAQBoard: React.FC = () => {
   const [activeTab, setActiveTab] = useState(-1);
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages: number = 2;
+  const totalPages = 2;
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -54,7 +54,7 @@ const FAQBoard: React.FC = () => {
           <option value="content">내용</option>
         </select>
         <input type="text" placeholder="검색" />
-        <button>
+        <button type="button">
           <FaSearch />
         </button>
       </StyledSearchBar>
@@ -84,7 +84,7 @@ const FAQBoard: React.FC = () => {
 
               <StyledHiddenRow active={activeTab === idx}>
                 <td>
-                  <div></div>
+                  <div />
                 </td>
                 <td colSpan={3}>
                   <div>{faq.answer}</div>

@@ -1,9 +1,9 @@
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useClickOutside } from 'hooks/useClickOutside';
 import IconButton from 'components/atoms/IconButton/IconButton';
-import AlarmPopup from '../AlarmPopup/AlarmPopup';
-import { StyledAlarmPopupModule } from './AlarmPopupModule.styled';
+import AlarmPopup from 'components/molecules/AlarmPopup/AlarmPopup';
 import { BsBellFill } from 'react-icons/bs';
+import { StyledAlarmPopupModule } from './AlarmPopupModule.styled';
 
 const AlarmPopupModule: React.FC = () => {
   const [isPopup, setIsPopup] = useState(false);

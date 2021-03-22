@@ -1,7 +1,8 @@
 import React from 'react';
+import { NavSubMenuList } from '@objects';
 import { NavLink } from 'react-router-dom';
-import { StyledMainMenu, StyledSubMenu } from './NavDropdownMenu.styled';
 import { FiChevronUp, FiChevronDown } from 'react-icons/fi';
+import { StyledMainMenu, StyledSubMenu } from './NavDropdownMenu.styled';
 
 interface Props {
   active?: boolean;
@@ -10,24 +11,22 @@ interface Props {
   children: string;
 }
 
-const NavDropdownMenu: React.FC<Props> = ({ children, active, submenus, onClick }) => {
-  return (
-    <>
-      <StyledMainMenu className={active ? 'active' : undefined} onClick={onClick}>
-        <h3>{children}</h3>
-        {submenus ? active ? <FiChevronUp /> : <FiChevronDown /> : undefined}
-      </StyledMainMenu>
-      <StyledSubMenu className={active && submenus ? 'active' : undefined}>
-        <ul>
-          {submenus?.map((submenu, idx) => (
-            <NavLink key={idx} to={submenu.link} activeClassName="subactive">
-              <li>{submenu.name}</li>
-            </NavLink>
-          ))}
-        </ul>
-      </StyledSubMenu>
-    </>
-  );
-};
+const NavDropdownMenu: React.FC<Props> = ({ children, active, submenus, onClick }: Props) => (
+  <>
+    <StyledMainMenu className={active ? 'active' : undefined} onClick={onClick}>
+      <h3>{children}</h3>
+      {submenus && (active ? <FiChevronUp /> : <FiChevronDown />)}
+    </StyledMainMenu>
+    <StyledSubMenu className={active && submenus ? 'active' : undefined}>
+      <ul>
+        {submenus?.map((submenu, idx) => (
+          <NavLink key={idx} to={submenu.link} activeClassName="subactive">
+            <li>{submenu.name}</li>
+          </NavLink>
+        ))}
+      </ul>
+    </StyledSubMenu>
+  </>
+);
 
 export default React.memo(NavDropdownMenu);

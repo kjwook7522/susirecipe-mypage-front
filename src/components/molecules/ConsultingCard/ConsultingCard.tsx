@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { ConsultingPreview} from '@objects'
 import { SmallButton } from 'components/atoms/Button/Button';
-import { useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import {
   StyledConsultingCard,
   StyledThumbnailWrapper,
@@ -8,13 +9,12 @@ import {
   StyledConsultingInfo,
   StyledConsultingBtnWrapper,
 } from './ConsultingCard.styled';
-import { Link } from 'react-router-dom';
 
 interface Props {
   consulting: ConsultingPreview;
 }
 
-const ConsultingCard: React.FC<Props> = ({ consulting }) => {
+const ConsultingCard: React.FC<Props> = ({ consulting }: Props) => {
   const warnningMsg = useCallback(() => alert('준비중입니다'), []);
   return (
     <StyledConsultingCard>

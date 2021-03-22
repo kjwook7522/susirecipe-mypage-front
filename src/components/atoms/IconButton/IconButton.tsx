@@ -8,7 +8,7 @@ interface Props {
   onClick?: React.MouseEventHandler<HTMLSpanElement>;
 }
 
-const IconButton: React.FC<Props> = ({ children, clickRef, ...props }) => {
+const IconButton: React.FC<Props> = ({ children, clickRef, ...props }: Props) => {
   return (
     <StyledIconButton ref={clickRef} {...props}>
       {children}

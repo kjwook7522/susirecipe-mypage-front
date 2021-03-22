@@ -7,12 +7,10 @@ interface Props {
   handlePopup: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ProgressDot: React.FC<Props> = ({ times, clickRef, handlePopup }) => {
-  return (
-    <StyledProgressDot onClick={() => handlePopup(prev => !prev)} ref={clickRef}>
-      <span>{times}</span>
-    </StyledProgressDot>
-  );
-};
+const ProgressDot: React.FC<Props> = ({ times, clickRef, handlePopup }: Props) => (
+  <StyledProgressDot onClick={() => handlePopup(prev => !prev)} ref={clickRef}>
+    <span>{times}</span>
+  </StyledProgressDot>
+);
 
 export default React.memo(ProgressDot);

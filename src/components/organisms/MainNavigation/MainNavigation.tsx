@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { NavMenuTab, NavSubMenuList } from '@objects';
 import { useHistory, useLocation } from 'react-router-dom';
 import NavDropdownMenu from 'components/molecules/NavDropdownMenu/NavDropdownMenu';
 import { StyledNavigation } from './MainNavigation.styled';
@@ -17,9 +18,8 @@ const MainNavigation: React.FC = () => {
     setActivceTab(prev => {
       if (prev === 'myinfo') {
         return null;
-      } else {
-        return 'myinfo';
       }
+      return 'myinfo';
     });
   }, []);
 
@@ -32,9 +32,8 @@ const MainNavigation: React.FC = () => {
     setActivceTab(prev => {
       if (prev === 'useinfo') {
         return null;
-      } else {
-        return 'useinfo';
       }
+      return 'useinfo';
     });
   }, []);
 

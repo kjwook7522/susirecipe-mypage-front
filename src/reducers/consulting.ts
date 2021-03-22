@@ -1,3 +1,5 @@
+import { Consulting } from '@objects';
+import { ConsultingAction } from '@actions';
 import { UPDATE_CONSULTING } from 'actions/consulting';
 
 const initState: Consulting = {

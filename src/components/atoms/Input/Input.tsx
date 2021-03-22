@@ -1,23 +1,12 @@
 import React from 'react';
+import { InputType } from '@objects';
 import { StyledInput } from './Input.styled';
 
 interface Props {
   id?: string;
   name?: string;
   width?: string;
-  type?:
-    | 'text'
-    | 'password'
-    | 'email'
-    | 'number'
-    | 'checkbox'
-    | 'range'
-    | 'file'
-    | 'radio'
-    | 'range'
-    | 'submit'
-    | 'tel'
-    | 'color';
+  type?: InputType;
   className?: string;
   value?: string;
   placeholder?: string;
@@ -31,8 +20,6 @@ interface Props {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input: React.FC<Props> = ({ type = 'text', ...props }) => {
-  return <StyledInput type={type} {...props} />;
-};
+const Input: React.FC<Props> = ({ type = 'text', ...props }: Props) => <StyledInput type={type} {...props} />;
 
 export default React.memo(Input);

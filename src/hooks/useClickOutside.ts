@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export const useClickOutside = (callback: Function) => {
+export const useClickOutside = (callback: () => void) => {
   const targetRef = useRef<any>(null);
   const buttonRef = useRef<any>(null);
 

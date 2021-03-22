@@ -6,15 +6,15 @@ interface Props {
   children?: ReactNode;
 }
 
-const DdayAlert: React.FC<Props> = ({ children, targetDate }) => {
+const DdayAlert: React.FC<Props> = ({ children, targetDate }: Props) => {
   const today = new Date();
 
-  const calcDday = (today: Date, target?: Date): string => {
+  const calcDday = (_today: Date, target?: Date): string => {
     if (!target) {
       return '';
     }
 
-    const todayTime = today.getTime();
+    const todayTime = _today.getTime();
     const targetTime = target.getTime();
 
     const gap = targetTime - todayTime;
@@ -22,11 +22,12 @@ const DdayAlert: React.FC<Props> = ({ children, targetDate }) => {
 
     if (result < 0) {
       return result.toString();
-    } else if (result === 0) {
-      return '-DAY';
-    } else {
-      return '+' + result.toString();
     }
+    if (result === 0) {
+      return '-DAY';
+    }
+
+    return `+${result.toString()}`;
   };
 
   return (

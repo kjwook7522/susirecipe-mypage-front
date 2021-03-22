@@ -51,7 +51,9 @@ export const StyledToggleTitle = styled.div`
   font-size: 1.25rem;
   color: #909090;
 
-  span {
+  button {
+    border: none;
+    background-color: transparent;
     cursor: pointer;
   }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ButtonColors, ButtonTheme } from '@objects';
 import { BLACK, GRAY, INSTA, KAKAO, KOBALT, LIGHTRED, RED, SKY } from 'common/constants/ButtonTheme';
 import { StyledSmallButton, StyledMiddleButton } from './Button.styled';
 
@@ -9,6 +10,7 @@ interface Props {
   style?: React.CSSProperties;
   clickRef?: React.RefObject<any>;
   disableSubmit?: boolean;
+  children?: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
@@ -35,8 +37,8 @@ const convertTheme = (color: ButtonColors | undefined): ButtonTheme => {
   }
 };
 
-export const SmallButton: React.FC<Props> = React.memo(({ children, theme, clickRef, disableSubmit, ...props }) => {
-  return (
+export const SmallButton: React.FC<Props> = React.memo(
+  ({ children, theme, clickRef, disableSubmit, ...props }: Props) => (
     <StyledSmallButton
       theme={convertTheme(theme)}
       ref={clickRef}
@@ -45,13 +47,11 @@ export const SmallButton: React.FC<Props> = React.memo(({ children, theme, click
     >
       {children}
     </StyledSmallButton>
-  );
-});
+  )
+);
 
-export const MiddleButton: React.FC<Props> = React.memo(({ children, theme, clickRef, ...props }) => {
-  return (
-    <StyledMiddleButton theme={convertTheme(theme)} ref={clickRef} {...props}>
-      {children}
-    </StyledMiddleButton>
-  );
-});
+export const MiddleButton: React.FC<Props> = React.memo(({ children, theme, clickRef, ...props }: Props) => (
+  <StyledMiddleButton theme={convertTheme(theme)} ref={clickRef} {...props}>
+    {children}
+  </StyledMiddleButton>
+));

@@ -1,3 +1,6 @@
+import { NoticeList, NewsList } from '@objects';
+import { NoticeListAction, NewsListAction } from '@actions';
+
 export const UPDATE_NOTICE = 'UPDATE_NOTICE';
 export const UPDATE_NEWS = 'UPDATE_NEWS';
 

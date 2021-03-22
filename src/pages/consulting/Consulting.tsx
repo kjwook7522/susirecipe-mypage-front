@@ -1,3 +1,4 @@
+import React from 'react'
 import ConsultingTemplate from "templates/ConsultingTemplate/ConsultingTemplate";
 import { tempConsultingList } from 'common/constants/TempData';
 

@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { StyledAlarmList, StyledAlarmPopup, StyledMoreWrapper, StyledTitle } from './AlarmPopup.styled';
+import React, { useState } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { StyledAlarmList, StyledAlarmPopup, StyledMoreWrapper, StyledTitle } from './AlarmPopup.styled';
 
 interface Props {
   top?: string;
@@ -10,7 +10,7 @@ interface Props {
   clickRef?: React.RefObject<any>;
 }
 
-const AlarmPopup: React.FC<Props> = ({ clickRef, ...props }) => {
+const AlarmPopup: React.FC<Props> = ({ clickRef, ...props }: Props) => {
   const [activeMore, setActiveMore] = useState(false);
 
   return (
@@ -36,13 +36,13 @@ const AlarmPopup: React.FC<Props> = ({ clickRef, ...props }) => {
           <span>수시레시피만의 특별한 이벤트</span>
         </li>
         <li>
-          <span></span>
+          <span />
         </li>
         <li>
-          <span></span>
+          <span />
         </li>
         <li>
-          <span></span>
+          <span />
         </li>
       </StyledAlarmList>
       <StyledMoreWrapper onClick={() => setActiveMore(prev => !prev)}>

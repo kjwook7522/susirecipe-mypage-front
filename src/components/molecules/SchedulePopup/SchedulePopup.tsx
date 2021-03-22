@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addMonthTodo } from 'actions/todoList';
 import DatePicker from 'components/atoms/DatePicker/DatePicker';
 import Input from 'components/atoms/Input/Input';
-import { StyledSchedulePopup, StyledInputBox, StyledContentWrapper, StyledButtonWrapper } from './SchedulePopup.styled';
 import FlexButton from 'components/atoms/FlexButton/FlexButton';
+import { StyledSchedulePopup, StyledInputBox, StyledContentWrapper, StyledButtonWrapper } from './SchedulePopup.styled';
 
 interface Props {
   top?: string;
@@ -15,7 +15,7 @@ interface Props {
   handleCancle: () => void;
 }
 
-const SchedulePopup: React.FC<Props> = ({ clickRef, handleCancle, ...props }) => {
+const SchedulePopup: React.FC<Props> = ({ clickRef, handleCancle, ...props }: Props) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
 

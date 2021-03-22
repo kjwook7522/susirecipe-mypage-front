@@ -12,12 +12,10 @@ interface Props {
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const SqureButton: React.FC<Props> = ({ children, clickRef, disableSubmit, ...props }) => {
-  return (
-    <StyledSqureButton ref={clickRef} type={disableSubmit ? 'button' : undefined} {...props}>
-      {children}
-    </StyledSqureButton>
-  );
-};
+const SqureButton: React.FC<Props> = ({ children, clickRef, disableSubmit, ...props }: Props) => (
+  <StyledSqureButton ref={clickRef} type={disableSubmit ? 'button' : undefined} {...props}>
+    {children}
+  </StyledSqureButton>
+);
 
 export default React.memo(SqureButton);

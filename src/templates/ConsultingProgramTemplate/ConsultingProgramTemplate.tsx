@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Consulting, ConsultingDiaryTab } from '@objects';
 import ProgressDotBar from 'components/organisms/ProgressDotBar/ProgressDotBar';
+import { tempConsultingFileList } from 'common/constants/TempData';
 import {
   StyledConsultingHeader,
   StyledConsultingProgramTemplate,
@@ -7,13 +9,12 @@ import {
   StyledProgramPeriod,
   StyledToggleTitle,
 } from './ConsultingProgramTemplate.styled';
-import { tempConsultingFileList } from 'common/constants/TempData';
 
 interface Props {
   consulting: Consulting;
 }
 
-const ConsultingProgramTemplate: React.FC<Props> = ({ consulting }) => {
+const ConsultingProgramTemplate: React.FC<Props> = ({ consulting }: Props) => {
   const [activeTab, setActiveTab] = useState<ConsultingDiaryTab>('consulting');
 
   return (
@@ -33,13 +34,21 @@ const ConsultingProgramTemplate: React.FC<Props> = ({ consulting }) => {
 
       <StyledConsultingProgramTemplate>
         <StyledToggleTitle>
-        <span className={activeTab === 'consulting' ? 'active' : undefined} onClick={() => setActiveTab('consulting')}>
-          메인
-        </span>{' '}
-        |{' '}
-        <span className={activeTab === 'diary' ? 'active' : undefined} onClick={() => setActiveTab('diary')}>
-          일지록
-        </span>
+          <button
+            type="button"
+            className={activeTab === 'consulting' ? 'active' : undefined}
+            onClick={() => setActiveTab('consulting')}
+          >
+            메인
+          </button>{' '}
+          |{' '}
+          <button
+            type="button"
+            className={activeTab === 'diary' ? 'active' : undefined}
+            onClick={() => setActiveTab('diary')}
+          >
+            일지록
+          </button>
         </StyledToggleTitle>
 
         <ProgressDotBar consultingFileList={tempConsultingFileList} />

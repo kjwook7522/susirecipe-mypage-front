@@ -1,13 +1,13 @@
+import React, { useCallback, useState } from 'react';
 import { useClickOutside } from 'hooks/useClickOutside';
-import { useCallback, useState } from 'react';
-import ProfilePopup from '../ProfilePopup/ProfilePopup';
+import ProfilePopup from 'components/molecules/ProfilePopup/ProfilePopup';
 import { StyledProfilePopupModule, StyledUsername } from './ProfilePopupModule.styled';
 
 interface Props {
   userName: string;
 }
 
-const ProfilePopupModule: React.FC<Props> = ({ userName }) => {
+const ProfilePopupModule: React.FC<Props> = ({ userName }: Props) => {
   const [isPopup, setIsPopup] = useState(false);
   const [popupRef, buttonRef] = useClickOutside(() => setIsPopup(false));
 

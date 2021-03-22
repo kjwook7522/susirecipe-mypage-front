@@ -1,3 +1,5 @@
+import React from 'react';
+import { ConsultingFile } from '@objects';
 import { StyledProgressPopup, StyledTriArrow } from './ProgressPopup.styled';
 
 interface Props {
@@ -9,15 +11,13 @@ interface Props {
   fileList?: Array<ConsultingFile>;
 }
 
-const ProgressPopup: React.FC<Props> = ({ clickRef, fileList, ...props }) => {
-  return (
-    <StyledProgressPopup ref={clickRef} {...props}>
-      {fileList?.map(file => (
-        <p key={file.id}>{file.name}</p>
-      ))}
-      <StyledTriArrow />
-    </StyledProgressPopup>
-  );
-};
+const ProgressPopup: React.FC<Props> = ({ clickRef, fileList, ...props }: Props) => (
+  <StyledProgressPopup ref={clickRef} {...props}>
+    {fileList?.map(file => (
+      <p key={file.id}>{file.name}</p>
+    ))}
+    <StyledTriArrow />
+  </StyledProgressPopup>
+);
 
 export default ProgressPopup;

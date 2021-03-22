@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Consulting } from '@objects'
 import { RootState } from 'common/store';
 import { updateConsulting } from 'actions/consulting';
 import ConsultingProgramTemplate from 'templates/ConsultingProgramTemplate/ConsultingProgramTemplate';
@@ -15,10 +16,11 @@ const ConsultingProgram: React.FC = () => {
   const consulting = useSelector((state: RootState) => state.consultingReducer);
 
   const findConsulting = (id: string): Consulting | undefined => {
-    const result = tempConsultingList.find(consulting => id === consulting.id);
+    const result = tempConsultingList.find(_consulting => id === _consulting.id);
     if (!result) {
-      return;
+      return undefined;
     }
+
     return {
       id: result.id,
       title: result.title,
@@ -27,12 +29,12 @@ const ConsultingProgram: React.FC = () => {
   };
 
   useEffect(() => {
-    const consulting = findConsulting(programid);
-    if (!consulting) {
+    const currentConsulting = findConsulting(programid);
+    if (!currentConsulting) {
       alert('잘못된 경로의 접근입니다');
       history.goBack();
     } else {
-      dispatch(updateConsulting(consulting));
+      dispatch(updateConsulting(currentConsulting));
     }
   }, [programid, history, dispatch]);
 

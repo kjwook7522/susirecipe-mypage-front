@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { TodoList } from '@objects';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'common/store';
 import { updateMonthTodo, updateTodayTodo } from 'actions/todoList';
@@ -10,7 +10,7 @@ interface Props {
   type: 'TODAY' | 'MONTH';
 }
 
-const ScheduleTodoList: React.FC<Props> = ({ type }) => {
+const ScheduleTodoList: React.FC<Props> = ({ type }: Props) => {
   const dispatch = useDispatch();
   const myTodoList = useSelector((state: RootState) => state.todoListReducer);
   const todoList: TodoList = type === 'TODAY' ? myTodoList.today : myTodoList.month;
@@ -24,12 +24,10 @@ const ScheduleTodoList: React.FC<Props> = ({ type }) => {
       setIsEdit(true);
       setEditLine(idx);
       setEditText(todo);
-    } else {
-      if (window.confirm('작성중인 일정이 지워질 수 있습니다\n계속하시겠습니까?')) {
-        setIsEdit(true);
-        setEditLine(idx);
-        setEditText(todo);
-      }
+    } else if (window.confirm('작성중인 일정이 지워질 수 있습니다\n계속하시겠습니까?')) {
+      setIsEdit(true);
+      setEditLine(idx);
+      setEditText(todo);
     }
   };
 
@@ -87,7 +85,7 @@ const ScheduleTodoList: React.FC<Props> = ({ type }) => {
             <form onSubmit={handleSubmit}>
               <Input width="200px" value={editText} required onChange={handleEditText} />
               <StyledButtonWrapper>
-                <button className="edit-btn" onClick={() => handleEditOK(idx)}>
+                <button type="submit" className="edit-btn" onClick={() => handleEditOK(idx)}>
                   수정완료
                 </button>{' '}
                 |{' '}
@@ -100,11 +98,11 @@ const ScheduleTodoList: React.FC<Props> = ({ type }) => {
             <>
               {todo}
               <StyledButtonWrapper>
-                <button className="edit-btn" onClick={() => handleEdit(idx, todo)}>
+                <button type="button" className="edit-btn" onClick={() => handleEdit(idx, todo)}>
                   수정
                 </button>{' '}
                 |{' '}
-                <button className="delete-btn" onClick={() => handleDelete(idx)}>
+                <button type="button" className="delete-btn" onClick={() => handleDelete(idx)}>
                   삭제
                 </button>
               </StyledButtonWrapper>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ButtonColors, ButtonTheme } from '@objects';
 import { BLACK, GRAY, INSTA, KAKAO, KOBALT, LIGHTRED, RED, SKY } from 'common/constants/ButtonTheme';
 import { StyledFlexButton } from './FlexButton.styled';
 
@@ -38,12 +39,10 @@ const convertTheme = (color: ButtonColors | undefined): ButtonTheme => {
   }
 };
 
-const FlexButton: React.FC<Props> = ({ children, theme, clickRef, disableSubmit, ...props }) => {
-  return (
-    <StyledFlexButton theme={convertTheme(theme)} ref={clickRef} type={disableSubmit ? 'button' : undefined} {...props}>
-      {children}
-    </StyledFlexButton>
-  );
-};
+const FlexButton: React.FC<Props> = ({ children, theme, clickRef, disableSubmit, ...props }: Props) => (
+  <StyledFlexButton theme={convertTheme(theme)} ref={clickRef} type={disableSubmit ? 'button' : undefined} {...props}>
+    {children}
+  </StyledFlexButton>
+);
 
 export default React.memo(FlexButton);

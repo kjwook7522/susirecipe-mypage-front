@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateDday } from 'actions/ddayList';
 import { RootState } from 'common/store';
@@ -16,7 +16,6 @@ const Index: React.FC = () => {
   const noticenewsList = useSelector((state: RootState) => state.noticenewsReducer);
 
   useEffect(() => {
-
     dispatch(updateMyFile(tempMyFilesList));
     dispatch(updateDday(tempDday));
     dispatch(updateTakeConsulting(tempConsultingList));

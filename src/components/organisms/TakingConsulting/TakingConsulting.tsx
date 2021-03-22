@@ -1,12 +1,13 @@
-import { StyledTakingConsulting, StyledTableRow } from './TakingConsulting.styled';
+import React, { useState } from 'react';
+import { ConsultingPreviewList } from '@objects';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import { useState } from 'react';
+import { StyledTakingConsulting, StyledTableRow } from './TakingConsulting.styled';
 
 interface Props {
   consultingList: ConsultingPreviewList;
 }
 
-const TakingConsulting: React.FC<Props> = ({ consultingList }) => {
+const TakingConsulting: React.FC<Props> = ({ consultingList }: Props) => {
   const [activeTab, setActiveTab] = useState(-1);
 
   const handleTab = (idx: number) => {
@@ -26,14 +27,10 @@ const TakingConsulting: React.FC<Props> = ({ consultingList }) => {
 
       {consultingList.map((consulting, idx) => (
         <StyledTableRow key={consulting.id} active={activeTab === idx}>
-          <div className="content-cell" onClick={() => handleTab(idx)}>
+          <div className="content-cell" role="menuitem" tabIndex={idx} onClick={() => handleTab(idx)}>
             <h1 className="title">
               {consulting.title}
-              {activeTab === idx ? (
-                <FiChevronUp className="more-icon"/>
-              ) : (
-                <FiChevronDown className="more-icon"/>
-              )}
+              {activeTab === idx ? <FiChevronUp className="more-icon" /> : <FiChevronDown className="more-icon" />}
             </h1>
             <div className="content">
               <p>

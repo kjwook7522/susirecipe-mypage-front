@@ -8,16 +8,14 @@ interface Props {
   list: Array<string>;
 }
 
-const Select: React.FC<Props> = ({ list, id, className, value }) => {
-  return (
-    <StyledSelect id={id} className={className}>
-      {list.map((item, idx) => (
-        <option key={idx} value={value}>
-          {item}
-        </option>
-      ))}
-    </StyledSelect>
-  );
-};
+const Select: React.FC<Props> = ({ list, id, className, value }: Props) => (
+  <StyledSelect id={id} className={className}>
+    {list.map((item, idx) => (
+      <option key={idx} value={value}>
+        {item}
+      </option>
+    ))}
+  </StyledSelect>
+);
 
 export default React.memo(Select);

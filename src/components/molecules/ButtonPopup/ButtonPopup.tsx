@@ -12,7 +12,7 @@ interface Props {
   popupProps?: any;
 }
 
-const ButtonPopup: React.FC<Props> = ({ buttonComponent, buttonProps, buttonChildren, popupComponent, popupProps }) => {
+const ButtonPopup: React.FC<Props> = ({ buttonComponent, buttonProps, buttonChildren, popupComponent, popupProps }: Props) => {
   const ButtonComponent = buttonComponent;
   const PopupComponent = popupComponent;
   const [isPopup, setIsPopup] = useState(false);

@@ -1,3 +1,4 @@
+import { ButtonTheme } from '@objects';
 import styled, { css } from 'styled-components';
 
 const DefaultButtonCSS = css`

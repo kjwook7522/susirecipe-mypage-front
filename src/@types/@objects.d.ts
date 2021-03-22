@@ -8,6 +8,21 @@ declare module '@objects' {
     textColor: string;
   }
 
+  // Input //
+  export type InputType =
+    | 'text'
+    | 'password'
+    | 'email'
+    | 'number'
+    | 'checkbox'
+    | 'range'
+    | 'file'
+    | 'radio'
+    | 'range'
+    | 'submit'
+    | 'tel'
+    | 'color';
+
   // NavMenu //
   export type NavMenuTab = null | 'dashboard' | 'myinfo' | 'consulting' | 'useinfo' | 'videoclass';
   export type NavSubMenuList = Array<NavSubMenu>;
@@ -73,7 +88,10 @@ declare module '@objects' {
   export type MyFileList = Array<MyFile>;
 
   // Notice & News //
-  export type NoticeNewsTab = 'notice' | 'news';
+  export interface NoticeNewsTab {
+    notice: boolean;
+    news: boolean;
+  }
   export type NoticeList = Array<string>;
   export type NewsList = Array<string>;
 
