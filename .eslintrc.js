@@ -23,10 +23,16 @@ module.exports = {
     "rules": {
         "no-use-before-define": ["off"],
         "no-unused-vars": ["warn"],
+        "no-alert": ["off"],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
         "arrow-body-style": ["warn", "as-needed"],
+        "jsx-a11y/click-events-have-key-events": "off",
         "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
         "react/require-default-props": ["off"],
+        "react/jsx-props-no-spreading": ["off"],
+        "@typescript-eslint/no-explicit-any": ["off"],
+
     },
 };
