@@ -4,6 +4,8 @@ import ProfilePopupModule from 'components/molecules/ProfilePopupModule/ProfileP
 import IconButton from 'components/atoms/IconButton/IconButton';
 import AlarmPopupModule from 'components/molecules/AlarmPopupModule/AlarmPopupModule';
 import { IoPower } from 'react-icons/io5';
+import defaultProfileImg from 'assets/images/default_profile_img.jpg';
+import logo from 'assets/images/main_logo.png';
 import {
   StyledHaeder,
   StyledLeftHeader,
@@ -18,7 +20,7 @@ const Header: React.FC = () => (
   <StyledHaeder>
     <StyledLeftHeader>
       <Link to="/">
-        <img src={process.env.PUBLIC_URL + '/images/main_logo.png'} alt="main_logo" />
+        <img src={logo} alt="main_logo" />
       </Link>
       <p>LMS SERVICE</p>
     </StyledLeftHeader>
@@ -27,11 +29,7 @@ const Header: React.FC = () => (
       <StyledUserBox>
         <StyledUser>
           <ProfilePopupModule userName="김동빈" />
-          <img
-            className="profile-img"
-            src={process.env.PUBLIC_URL + '/images/default_profile_img.jpg'}
-            alt="user_img"
-          />
+          <img className="profile-img" src={defaultProfileImg} alt="user_img" />
         </StyledUser>
         <StyledComment>김동빈님도, 배우면바뀐다</StyledComment>
       </StyledUserBox>

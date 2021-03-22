@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Consulting, ConsultingDiaryTab } from '@objects';
 import ProgressDotBar from 'components/organisms/ProgressDotBar/ProgressDotBar';
 import { tempConsultingFileList } from 'common/constants/TempData';
+import defaultProfileImg from 'assets/images/default_profile_img.jpg';
 import {
   StyledConsultingHeader,
   StyledConsultingProgramTemplate,
@@ -21,7 +22,7 @@ const ConsultingProgramTemplate: React.FC<Props> = ({ consulting }: Props) => {
     <>
       <StyledConsultingHeader>
         <StyledProgramTitle>
-          <img src={process.env.PUBLIC_URL + '/images/default_profile_img.jpg'} alt="profile_img" />
+          <img src={defaultProfileImg} alt="profile_img" />
           <div>
             <h1>{consulting.title}</h1>
             <h2>{consulting.consultant}</h2>

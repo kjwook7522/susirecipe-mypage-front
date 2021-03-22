@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { ConsultingPreview} from '@objects'
 import { SmallButton } from 'components/atoms/Button/Button';
 import { Link } from 'react-router-dom';
+import defaultProfileImg from 'assets/images/default_profile_img.jpg'
 import {
   StyledConsultingCard,
   StyledThumbnailWrapper,
@@ -19,7 +20,7 @@ const ConsultingCard: React.FC<Props> = ({ consulting }: Props) => {
   return (
     <StyledConsultingCard>
       <StyledThumbnailWrapper>
-        <img src={process.env.PUBLIC_URL + '/images/default_profile_img.jpg'} alt="thumbnail" />
+        <img src={defaultProfileImg} alt="thumbnail" />
       </StyledThumbnailWrapper>
 
       <StyledConsultingContent>
