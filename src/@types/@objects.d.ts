@@ -67,7 +67,10 @@ declare module '@objects' {
     consultant: string;
   }
 
-  export type ConsultingDiaryTab = 'consulting' | 'diary';
+  export interface ConsultingDiaryTab {
+    consulting: boolean;
+    diary: boolean;
+  };
 
   export interface ConsultingFile {
     id: string;

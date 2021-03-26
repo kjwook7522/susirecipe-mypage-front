@@ -47,13 +47,13 @@ export const StyledConsultingProgramTemplate = styled.div`
 
 export const StyledToggleTitle = styled.div`
   margin-bottom: 4rem;
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: #909090;
 
   button {
     border: none;
     background-color: transparent;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: #909090;
     cursor: pointer;
   }
 

@@ -16,7 +16,7 @@ interface Props {
 }
 
 const ConsultingProgramTemplate: React.FC<Props> = ({ consulting }: Props) => {
-  const [activeTab, setActiveTab] = useState<ConsultingDiaryTab>('consulting');
+  const [activeTab, setActiveTab] = useState<ConsultingDiaryTab>({ consulting: true, diary: false });
 
   return (
     <>
@@ -37,16 +37,16 @@ const ConsultingProgramTemplate: React.FC<Props> = ({ consulting }: Props) => {
         <StyledToggleTitle>
           <button
             type="button"
-            className={activeTab === 'consulting' ? 'active' : undefined}
-            onClick={() => setActiveTab('consulting')}
+            className={activeTab.consulting ? 'active' : undefined}
+            onClick={() => setActiveTab({ consulting: true, diary: false })}
           >
             메인
           </button>{' '}
           |{' '}
           <button
             type="button"
-            className={activeTab === 'diary' ? 'active' : undefined}
-            onClick={() => setActiveTab('diary')}
+            className={activeTab.diary ? 'active' : undefined}
+            onClick={() => setActiveTab({ consulting: false, diary: true })}
           >
             일지록
           </button>

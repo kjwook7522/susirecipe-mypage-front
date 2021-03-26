@@ -8,7 +8,7 @@ interface Props {
 }
 
 const NoticeNews: React.FC<Props> = ({ noticeList, newsList }: Props) => {
-  const [activeTab, setActiveTab] = useState<NoticeNewsTab>({ notice: false, news: false });
+  const [activeTab, setActiveTab] = useState<NoticeNewsTab>({ notice: true, news: false });
 
   return (
     <StyledNoticeNews>
