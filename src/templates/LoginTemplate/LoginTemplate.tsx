@@ -14,14 +14,19 @@ import {
 const LoginTemplate: React.FC = () => (
   <StyledLoginTemplate>
     <StyledHeader>수시레시피 로그인</StyledHeader>
+
     <StyledLoginTypeSection>
-      <AuthTypeToggle type='login' />
+      <AuthTypeToggle type="login" />
     </StyledLoginTypeSection>
+
     <StyledBannerSection>
       <AuthBanner />
     </StyledBannerSection>
+
     <StyledInputSection>input</StyledInputSection>
+
     <StyledFindIdSection>find</StyledFindIdSection>
+
     <StyledSocialLoginSection>social login</StyledSocialLoginSection>
   </StyledLoginTemplate>
 );

@@ -8,15 +8,23 @@ import MainLayout from 'layouts/MainLayout/MainLayout';
 import Consulting from 'pages/consulting/Consulting';
 import ConsultingProgram from 'pages/consulting/ConsultingProgram';
 import FAQ from 'pages/FAQ';
-import Login from 'pages/Login';
+import Login from 'pages/auth/Login';
 import EmptyLayout from 'layouts/EmptyLayout/EmptyLayout';
+import Join from 'pages/auth/Join';
 
 const AppRouter: React.FC = () => (
   <Router>
     <Switch>
-      <Route path="/login">
+      <Route path="/auth">
         <EmptyLayout>
-          <Login />
+          <Switch>
+            <Route path="/auth/login">
+              <Login />
+            </Route>
+            <Route path="/auth/join">
+              <Join />
+            </Route>
+          </Switch>
         </EmptyLayout>
       </Route>
       <Route path="/">

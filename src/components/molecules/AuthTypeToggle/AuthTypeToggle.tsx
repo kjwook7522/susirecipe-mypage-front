@@ -9,10 +9,10 @@ interface Props {
 
 const AuthTypeToggle: React.FC<Props> = ({ type }: Props) => (
   <StyledAuthTypeToggle>
-    <Link to="/login">
+    <Link to="/auth/login">
       <StyledTypeBox active={type === 'login'}>로그인</StyledTypeBox>
     </Link>
-    <Link to="/join">
+    <Link to="/auth/join">
       <StyledTypeBox active={type === 'join'}>회원가입</StyledTypeBox>
     </Link>
   </StyledAuthTypeToggle>
