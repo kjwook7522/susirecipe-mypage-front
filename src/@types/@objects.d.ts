@@ -70,7 +70,7 @@ declare module '@objects' {
   export interface ConsultingDiaryTab {
     consulting: boolean;
     diary: boolean;
-  };
+  }
 
   export interface ConsultingFile {
     id: string;
@@ -138,4 +138,7 @@ declare module '@objects' {
   }
 
   export type FAQList = Array<FAQ>;
+
+  // Auth //
+  export type AuthTab = 'login' | 'join';
 }

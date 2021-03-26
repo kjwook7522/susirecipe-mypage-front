@@ -8,35 +8,46 @@ import MainLayout from 'layouts/MainLayout/MainLayout';
 import Consulting from 'pages/consulting/Consulting';
 import ConsultingProgram from 'pages/consulting/ConsultingProgram';
 import FAQ from 'pages/FAQ';
+import Login from 'pages/Login';
+import EmptyLayout from 'layouts/EmptyLayout/EmptyLayout';
 
 const AppRouter: React.FC = () => (
   <Router>
-    <MainLayout>
-      <Switch>
-        <Route path="/faq">
-          <FAQ />
-        </Route>
-        <Route path="/consulting/:programid">
-          <ConsultingProgram />
-        </Route>
-        <Route path="/consulting">
-          <Consulting />
-        </Route>
-        <Route path="/paymanage">
-          <PayManage />
-        </Route>
-        <Route path="/schedule">
-          <Scedule />
-        </Route>
-        <Route path="/editprofile">
-          <EditProfile />
-        </Route>
-        <Route exact path="/">
-          <Index />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
-    </MainLayout>
+    <Switch>
+      <Route path="/login">
+        <EmptyLayout>
+          <Login />
+        </EmptyLayout>
+      </Route>
+      <Route path="/">
+        <MainLayout>
+          <Switch>
+            <Route path="/faq">
+              <FAQ />
+            </Route>
+            <Route path="/consulting/:programid">
+              <ConsultingProgram />
+            </Route>
+            <Route path="/consulting">
+              <Consulting />
+            </Route>
+            <Route path="/paymanage">
+              <PayManage />
+            </Route>
+            <Route path="/schedule">
+              <Scedule />
+            </Route>
+            <Route path="/editprofile">
+              <EditProfile />
+            </Route>
+            <Route exact path="/">
+              <Index />
+            </Route>
+            <Redirect to="/" />
+          </Switch>
+        </MainLayout>
+      </Route>
+    </Switch>
   </Router>
 );
 
