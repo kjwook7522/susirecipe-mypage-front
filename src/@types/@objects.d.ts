@@ -33,8 +33,12 @@ declare module '@objects' {
   }
 
   // Todo //
-  export type TodoList = Array<string>;
-  export type Todo = string;
+  export type TodoList = Array<Todo>;
+  export interface Todo {
+    id: string;
+    text: string;
+    targetDate: Date;
+  }
 
   export interface MyTodoList {
     today: TodoList;
@@ -92,8 +96,20 @@ declare module '@objects' {
     notice: boolean;
     news: boolean;
   }
-  export type NoticeList = Array<string>;
-  export type NewsList = Array<string>;
+  export interface Notice {
+    id: string;
+    title: string;
+    content: string;
+    createdAt: number;
+  }
+  export interface News {
+    id: string;
+    title: string;
+    content: string;
+    createdAt: number;
+  }
+  export type NoticeList = Array<Notice>;
+  export type NewsList = Array<News>;
 
   export interface NoticeNewsList {
     notice: NoticeList;
@@ -102,6 +118,7 @@ declare module '@objects' {
 
   // Dday //
   export interface Dday {
+    id: string;
     name: string;
     targetDate: Date;
   }

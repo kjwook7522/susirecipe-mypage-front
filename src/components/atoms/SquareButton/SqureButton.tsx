@@ -9,7 +9,7 @@ interface Props {
   children?: React.ReactNode;
   clickRef?: React.RefObject<any>;
   disableSubmit?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const SqureButton: React.FC<Props> = ({ children, clickRef, disableSubmit, ...props }: Props) => (

@@ -19,15 +19,15 @@ const ScheduleTodoList: React.FC<Props> = ({ type }: Props) => {
   const [editLine, setEditLine] = useState(-1);
   const [editText, setEditText] = useState('');
 
-  const handleEdit = (idx: number, todo: string) => {
+  const handleEdit = (idx: number, todoText: string) => {
     if (!isEdit) {
       setIsEdit(true);
       setEditLine(idx);
-      setEditText(todo);
+      setEditText(todoText);
     } else if (window.confirm('작성중인 일정이 지워질 수 있습니다\n계속하시겠습니까?')) {
       setIsEdit(true);
       setEditLine(idx);
-      setEditText(todo);
+      setEditText(todoText);
     }
   };
 
@@ -52,13 +52,15 @@ const ScheduleTodoList: React.FC<Props> = ({ type }: Props) => {
   };
 
   const handleEditOK = (idx: number) => {
-    todoList[idx] = editText;
     if (!editText) {
       return;
     }
 
+    const updatedTodoList = todoList.slice();
+    updatedTodoList[idx].text = editText;
+    
     if (type === 'TODAY') {
-      dispatch(updateTodayTodo([...todoList]));
+      dispatch(updateTodayTodo([...updatedTodoList]));
     }
 
     if (type === 'MONTH') {
@@ -80,7 +82,7 @@ const ScheduleTodoList: React.FC<Props> = ({ type }: Props) => {
   return (
     <StyledScheduleTodoList>
       {todoList.map((todo, idx) => (
-        <li key={idx}>
+        <li key={todo.id}>
           {editLine === idx ? (
             <form onSubmit={handleSubmit}>
               <Input width="200px" value={editText} required onChange={handleEditText} />
@@ -96,9 +98,9 @@ const ScheduleTodoList: React.FC<Props> = ({ type }: Props) => {
             </form>
           ) : (
             <>
-              {todo}
+              {todo.text}
               <StyledButtonWrapper>
-                <button type="button" className="edit-btn" onClick={() => handleEdit(idx, todo)}>
+                <button type="button" className="edit-btn" onClick={() => handleEdit(idx, todo.text)}>
                   수정
                 </button>{' '}
                 |{' '}

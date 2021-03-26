@@ -10,7 +10,7 @@ interface Props {
   right?: string;
   bottom?: string;
   clickRef?: React.RefObject<any>;
-  cancleCallback?: (event: React.MouseEvent<any, MouseEvent>) => void;
+  cancleCallback?: () => void;
 }
 
 const ProfilePopup: React.FC<Props> = ({ clickRef, cancleCallback, ...props }: Props) => (

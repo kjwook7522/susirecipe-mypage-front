@@ -10,8 +10,8 @@ interface Props {
 
 const Select: React.FC<Props> = ({ list, id, className, value }: Props) => (
   <StyledSelect id={id} className={className}>
-    {list.map((item, idx) => (
-      <option key={idx} value={value}>
+    {list.map(item => (
+      <option key={item} value={value}>
         {item}
       </option>
     ))}

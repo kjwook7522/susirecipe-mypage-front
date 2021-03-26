@@ -11,8 +11,8 @@ interface Props {
 
 const DdayBoard: React.FC<Props> = ({ ddayList }: Props) => (
   <StyledDdayBoard>
-    {ddayList.map((dday, idx) => (
-      <div key={idx} className="dday-box">
+    {ddayList.map(dday => (
+      <div key={dday.id} className="dday-box">
         <DdayAlert targetDate={dday.targetDate}>{dday.name}</DdayAlert>
       </div>
     ))}

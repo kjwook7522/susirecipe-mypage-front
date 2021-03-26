@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Todo } from '@objects';
+import { v4 as uuid } from 'uuid';
 import { addMonthTodo } from 'actions/todoList';
 import DatePicker from 'components/atoms/DatePicker/DatePicker';
 import Input from 'components/atoms/Input/Input';
@@ -20,7 +22,12 @@ const SchedulePopup: React.FC<Props> = ({ clickRef, handleCancle, ...props }: Pr
   const [title, setTitle] = useState('');
 
   const handleOk = () => {
-    dispatch(addMonthTodo(title));
+    const todo: Todo = {
+      id: uuid(),
+      text: title,
+      targetDate: new Date(),
+    };
+    dispatch(addMonthTodo(todo));
     setTitle('');
     handleCancle();
   };

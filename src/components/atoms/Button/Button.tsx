@@ -11,7 +11,7 @@ interface Props {
   clickRef?: React.RefObject<any>;
   disableSubmit?: boolean;
   children?: React.ReactNode;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const convertTheme = (color: ButtonColors | undefined): ButtonTheme => {

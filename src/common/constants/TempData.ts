@@ -11,14 +11,17 @@ import {
 
 export const tempDday: DdayList = [
   {
+    id: 'w3ffsa3',
     name: '대학수능능력시험',
     targetDate: new Date(2021, 10, 18),
   },
   {
+    id: 'fs43sfe',
     name: '수시원서 마감',
     targetDate: new Date(2021, 8, 14),
   },
   {
+    id: 'he4aw3a3',
     name: '9월 모의고사',
     targetDate: new Date(2021, 8, 1),
   },
@@ -75,15 +78,15 @@ export const tempMyFilesList: MyFileList = [
 ];
 
 export const tempNoticeList: NoticeList = [
-  '6.2 수시레시피 수강생 전원 이벤트',
-  '수시 6개 합격 시 수강 금액 20% 추가 할인 이벤트',
-  '6.1 10:00 - 17:00 마이페이지 서버 점검',
-  '김동빈 컨설턴트가 알려주는 학생부 관리 비법',
+  { id: '2000', title: '6.2 수시레시피 수강생 전원 이벤트', content: '', createdAt: 1616482559692 },
+  { id: '2001', title: '수시 6개 합격 시 수강 금액 20% 추가 할인 이벤트', content: '', createdAt: 1616482559693 },
+  { id: '2002', title: '6.1 10:00 - 17:00 마이페이지 서버 점검', content: '', createdAt: 1616482559694 },
+  { id: '2003', title: '김동빈 컨설턴트가 알려주는 학생부 관리 비법', content: '', createdAt: 1616482559695 },
 ];
 
 export const tempNewsList: NewsList = [
-  '올해 9월 모의고사 난이도 상승으로 수험생 곤란',
-  '정시 확대로 인해 바뀐 입시 전략',
+  { id: '3000', title: '올해 9월 모의고사 난이도 상승으로 수험생 곤란', content: '', createdAt: 1616482559696 },
+  { id: '3001', title: '정시 확대로 인해 바뀐 입시 전략', content: '', createdAt: 1616482559697 },
 ];
 
 export const tempFAQlist: FAQList = [
@@ -124,12 +127,14 @@ export const tempFAQlist: FAQList = [
   },
 ];
 
-export const tempTodayTodo: TodoList = ['김윤환 컨설턴트와 컨설팅 예약'];
+export const tempTodayTodo: TodoList = [
+  { id: 'sefcdase', text: '김윤환 컨설턴트와 컨설팅 예약', targetDate: new Date() },
+];
 export const tempMonthTodo: TodoList = [
-  '8일 김윤환 컨설턴트와 컨설팅',
-  '15일 자기소개서 제출하기',
-  '22일 면접 준비하기',
-  '29일 김윤환 컨설턴트와 컨설팅',
+  { id: 'f3seffse', text: '8일 김윤환 컨설턴트와 컨설팅', targetDate: new Date() },
+  { id: '32fawefa', text: '15일 자기소개서 제출하기', targetDate: new Date() },
+  { id: 'kr675jt6', text: '22일 면접 준비하기', targetDate: new Date() },
+  { id: 'sh5r5sgw', text: '29일 김윤환 컨설턴트와 컨설팅', targetDate: new Date() },
 ];
 
 export const tempConsultingFileList: ConsultingFileList = [

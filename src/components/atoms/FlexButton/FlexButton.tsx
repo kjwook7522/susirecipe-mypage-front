@@ -13,7 +13,7 @@ interface Props {
   children?: React.ReactNode;
   clickRef?: React.RefObject<any>;
   disableSubmit?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const convertTheme = (color: ButtonColors | undefined): ButtonTheme => {

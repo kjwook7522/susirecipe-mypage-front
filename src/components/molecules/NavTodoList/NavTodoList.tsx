@@ -14,7 +14,7 @@ const NavTodoList: React.FC<Props> = ({ type }: Props) => {
   return (
     <StyledNavTodoList>
       {todoList.map(todo => (
-        <li key={todo}>{todo}</li>
+        <li key={todo.id}>{todo.text}</li>
       ))}
     </StyledNavTodoList>
   );

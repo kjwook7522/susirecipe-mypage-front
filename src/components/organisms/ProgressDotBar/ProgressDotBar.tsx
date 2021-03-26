@@ -33,13 +33,13 @@ const ProgressDotBar: React.FC<Props> = ({ consultingFileList }: Props) => {
 
   return (
     <>
-      {getProgressDotBarArray().map((progressDotBar, idx) => {
+      {getProgressDotBarArray().map(progressDotBar => {
         const barWidth = getBarWidth(progressDotBar.length);
         return (
-          <StyledProgressDotBar width={barWidth} ref={barRef} key={idx}>
+          <StyledProgressDotBar width={barWidth} ref={barRef} key={progressDotBar[0].times}>
             <StyledBarLine />
-            {progressDotBar.map((consultingDayFiles, idxx) => (
-              <ProgressPopupModule key={idxx} consultingFiles={consultingDayFiles} />
+            {progressDotBar.map(consultingDayFiles => (
+              <ProgressPopupModule key={consultingDayFiles.times} consultingFiles={consultingDayFiles} />
             ))}
           </StyledProgressDotBar>
         );

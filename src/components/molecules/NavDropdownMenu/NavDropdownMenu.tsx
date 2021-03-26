@@ -7,7 +7,7 @@ import { StyledMainMenu, StyledSubMenu } from './NavDropdownMenu.styled';
 interface Props {
   active?: boolean;
   submenus?: NavSubMenuList;
-  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
   children: string;
 }
 
@@ -19,8 +19,8 @@ const NavDropdownMenu: React.FC<Props> = ({ children, active, submenus, onClick 
     </StyledMainMenu>
     <StyledSubMenu className={active && submenus ? 'active' : undefined}>
       <ul>
-        {submenus?.map((submenu, idx) => (
-          <NavLink key={idx} to={submenu.link} activeClassName="subactive">
+        {submenus?.map(submenu => (
+          <NavLink key={submenu.name} to={submenu.link} activeClassName="subactive">
             <li>{submenu.name}</li>
           </NavLink>
         ))}

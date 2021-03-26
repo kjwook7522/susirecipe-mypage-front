@@ -16,8 +16,8 @@ interface Props {
   disabled?: boolean;
   maxLength?: number;
   minLength?: number;
-  onClick?: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onClick?: React.MouseEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 const Input: React.FC<Props> = ({ type = 'text', ...props }: Props) => <StyledInput type={type} {...props} />;
