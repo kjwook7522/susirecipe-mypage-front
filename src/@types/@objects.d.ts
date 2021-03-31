@@ -141,4 +141,12 @@ declare module '@objects' {
 
   // Auth //
   export type AuthTab = 'login' | 'join';
+
+  // User //
+  export type UserTab = 'STUDENT' | 'PARENT' | 'MENTOR' | 'CONSULTANT';
+
+  export interface UserType {
+    name: string;
+    value: UserTab;
+  }
 }
