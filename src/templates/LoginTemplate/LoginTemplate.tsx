@@ -1,14 +1,13 @@
 import React from 'react';
 import AuthTypeToggle from 'components/molecules/AuthTypeToggle/AuthTypeToggle';
 import AuthBanner from 'components/molecules/AuthBanner/AuthBanner';
+import LoginForm from 'components/organisms/LoginForm/LoginForm';
 import {
   StyledLoginTemplate,
   StyledHeader,
   StyledLoginTypeSection,
   StyledBannerSection,
   StyledInputSection,
-  StyledFindIdSection,
-  StyledSocialLoginSection,
 } from './LoginTemplate.styled';
 
 const LoginTemplate: React.FC = () => (
@@ -23,11 +22,9 @@ const LoginTemplate: React.FC = () => (
       <AuthBanner />
     </StyledBannerSection>
 
-    <StyledInputSection>input</StyledInputSection>
-
-    <StyledFindIdSection>find</StyledFindIdSection>
-
-    <StyledSocialLoginSection>social login</StyledSocialLoginSection>
+    <StyledInputSection>
+      <LoginForm />
+    </StyledInputSection>
   </StyledLoginTemplate>
 );
 

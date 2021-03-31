@@ -21,19 +21,6 @@ export const StyledLoginTypeSection = styled.section`
 
 export const StyledBannerSection = styled.section`
   margin-bottom: 2rem;
-  background-color: blue;
 `;
 
-export const StyledInputSection = styled.section`
-  margin-bottom: 2.5rem;
-  background-color: cadetblue;
-`;
-
-export const StyledFindIdSection = styled.section`
-  margin-bottom: 6rem;
-  background-color: darkgoldenrod;
-`;
-
-export const StyledSocialLoginSection = styled.section`
-  background-color: fuchsia;
-`;
+export const StyledInputSection = styled.section``;
