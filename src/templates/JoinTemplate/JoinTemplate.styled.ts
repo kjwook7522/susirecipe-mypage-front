@@ -23,3 +23,5 @@ export const StyledBannerSection = styled.section`
   margin-bottom: 2rem;
   background-color: blue;
 `;
+
+export const StyledInputSection = styled.section``;

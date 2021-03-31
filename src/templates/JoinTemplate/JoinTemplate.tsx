@@ -1,7 +1,14 @@
+import React from 'react';
 import AuthBanner from 'components/molecules/AuthBanner/AuthBanner';
 import AuthTypeToggle from 'components/molecules/AuthTypeToggle/AuthTypeToggle';
-import React from 'react';
-import { StyledHeader, StyledJoinTemplate, StyledLoginTypeSection, StyledBannerSection } from './JoinTemplate.styled';
+import JoinForm from 'components/organisms/JoinForm/JoinForm';
+import {
+  StyledHeader,
+  StyledJoinTemplate,
+  StyledLoginTypeSection,
+  StyledBannerSection,
+  StyledInputSection,
+} from './JoinTemplate.styled';
 
 const JoinTemplate: React.FC = () => (
   <StyledJoinTemplate>
@@ -14,6 +21,10 @@ const JoinTemplate: React.FC = () => (
     <StyledBannerSection>
       <AuthBanner />
     </StyledBannerSection>
+
+    <StyledInputSection>
+      <JoinForm />
+    </StyledInputSection>
   </StyledJoinTemplate>
 );
 
