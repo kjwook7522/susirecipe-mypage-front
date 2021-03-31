@@ -1,0 +1,1 @@
+export const apiAdress = 'http://ec2-3-34-189-46.ap-northeast-2.compute.amazonaws.com:3000';
