@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonColors, ButtonTheme } from '@objects';
-import { BLACK, GRAY, INSTA, KAKAO, KOBALT, LIGHTRED, RED, SKY } from 'common/constants/ButtonTheme';
+import { BLACK, GRAY, INSTA, KAKAO, KOBALT, LIGHTGRAY, LIGHTRED, RED, SKY } from 'common/constants/ButtonTheme';
 import { StyledSmallButton, StyledMiddleButton } from './Button.styled';
 
 interface Props {
@@ -30,6 +30,8 @@ const convertTheme = (color: ButtonColors | undefined): ButtonTheme => {
       return KAKAO;
     case 'gray':
       return GRAY;
+    case 'lightgray':
+      return LIGHTGRAY;
     case 'insta':
       return INSTA;
     default:

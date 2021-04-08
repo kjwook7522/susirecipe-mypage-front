@@ -1,6 +1,6 @@
 declare module '@objects' {
   // Button //
-  export type ButtonColors = 'black' | 'red' | 'lightred' | 'sky' | 'kobalt' | 'kakao' | 'gray' | 'insta';
+  export type ButtonColors = 'black' | 'red' | 'lightred' | 'sky' | 'kobalt' | 'kakao' | 'gray' | 'lightgray' | 'insta';
 
   export interface ButtonTheme {
     bgColor: string;
